@@ -1,7 +1,7 @@
 # Vladimir Savchenko
 
 ## 📞 Contact Information
-- **Phone:** +375 (44) 735-65-52
+- **Phone:** +375 (29) 373-61-57
 - **Email:** vova-savchenko-06@mail.ru
 - **GitHub:** [ReksusE](https://github.com/ReksusE)
 - **Instagram:** [vovasavchenko55](https://www.instagram.com/vovasavchenko55/)
