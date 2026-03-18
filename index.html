@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vladimir Savchenko</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="gaming-avatar-social_665280-69799.jpg" alt="profile avatar, simple portrait" style="width: 200px; height: 200px; border-radius: 50%;">
+            <h1 style="color: red">Vladimir Savchenko</h1>
+
+        <nav>
+            <ul>
+                <li>Phone number: <a href="tel:+375447356552"> +375 (44) 735-65-52</a></li>
+                <li>Mail: <a href="mail:vova-savchenko-06@mail.ru"> vova-savchenko-06@mail.ru</a></li>
+                <li><a href="https://www.instagram.com/vovasavchenko55/"> Instagram</a></li>
+                <li><a href="https://github.com/ReksusE"> GitHub</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100031301180303"> Facebook</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <h2 style="color: yellow">About me</h2>
+            <p style="text-align: center;">The ability to work in a multitasking mode and high analytical abilities allow me to work effectively with large amounts of information and quickly find high-quality solutions to complex problems.</p>
+        </section>
+    </header>
+
+    <main>
+        
+        <section>
+            <h2 style="color: green"> Technical skills</h2>
+            <ul>
+                <li><strong>Languages:</strong> C#, HTML5</li>
+                <li><strong>Tools & methods:</strong> Git/GitHub, Enterprise Architect, Multisim</li>
+                <li><strong>In progress:</strong> Course project in web programming, Coursework on databases</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2> Learning projects</h2>
+            <ol>   
+                <li>
+                    <strong>Curriculum Vitae (this page)</strong> – 
+                    <a href="https://github.com/john-dev/cv-html"></a>
+                    Created to fulfill all requirements: header, main, footer, nav, h1/h2, lists, code example.
+                </li>
+                <li>
+                    <strong>Weather dashboard</strong> – 
+                    React + OpenWeatherMap API, geolocation, error boundaries, responsive layout.
+                </li>
+                <li>
+                    <strong>Task manager (CLI)</strong> – 
+                    Python, sqlite3, argparse, object-oriented design.
+                </li>
+                <li>
+                    <strong>Portfolio layout</strong> – 
+                    pure HTML/CSS (no frameworks) – grid, flex, and accessibility.
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <h2> Courses & certificates</h2>
+            <ul>
+                <li>The Complete Web Development Bootcamp (2024) – Udemy (Angela Yu)</li>
+                <li>CS50's Introduction to Computer Science – Harvard edX (2023)</li>
+                <li>Frontend Masters: React with TypeScript (2024)</li>
+                <li>SQL and Database Design – Stepik (2023)</li>
+                <li>freeCodeCamp: Responsive Web Design</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>📌 Code example (TypeScript utility)</h2>
+            <pre>
+                static void FindMinMaxPrice()
+                {
+                Console.Clear();
+                Console.WriteLine("=== ПОИСК ПО ЦЕНЕ ===\n");
+
+                if (coffeeArray.Length == 0)
+                {
+                    Console.WriteLine("Каталог пуст.");
+                    Console.WriteLine("\nНажмите любую клавишу...");
+                    Console.ReadKey();
+                    return;
+                }
+
+                Console.WriteLine("1. Самый дорогой кофе");
+                Console.WriteLine("2. Самый дешевый кофе");
+                Console.Write("Выберите вариант: ");
+
+                string choice = Console.ReadLine();
+
+                Coffee result;
+                if (choice == "1")
+                {
+                    result = coffeeArray.OrderByDescending(c => c.Price).First();
+                    Console.WriteLine("\nСАМЫЙ ДОРОГОЙ КОФЕ:");
+                }
+                else if (choice == "2")
+                {
+                    result = coffeeArray.OrderBy(c => c.Price).First();
+                    Console.WriteLine("\nСАМЫЙ ДЕШЕВЫЙ КОФЕ:");
+                }
+                else
+                {
+                    Console.WriteLine("Неверный выбор.");
+                    Console.ReadKey();
+                    return;
+                }
+
+                Console.WriteLine(new string('-', 75));
+                Console.WriteLine("| {0,-5} | {1,-15} | {2,-15} | {3,10} | {4,8} | {5,10} |",
+                    "ID", "Название", "Страна", "Цена (руб)", "Обжарка", "Тип");
+                Console.WriteLine(new string('-', 75));
+                Console.WriteLine("| {0,-5} | {1,-15} | {2,-15} | {3,10:F2} | {4,8} | {5,10} |",
+                    result.Id, result.Name, result.Origin, result.Price,
+                    result.RoastLevel, result.PackageType == 'G' ? "Зерна" : "Молотый");
+                Console.WriteLine(new string('-', 75));
+
+                Console.WriteLine("\nНажмите любую клавишу...");
+                Console.ReadKey();
+                }
+            </pre>
+        </section>
+
+        <section>
+            <h2> English</h2>
+            <ul>
+                <li><strong>Level:</strong> B2+ (Upper‑Intermediate). Regular practice:</li>
+                <li>• daily reading of technical documentation, blogs, and Stack Overflow in English</li>
+                <li>• participation in English‑speaking Discord dev communities (The Odin Project, CodeSupport)</li>
+                <li>• 2 months pair‑programming with developers from Nigeria and Philippines (remote, 2024)</li>
+                <li>• TOEFL ITP score 580 (equivalent B2).</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <hr>
+        <p> <strong>Savchenko Vladimir</strong> — 2025 · built as CV project</p>
+        <nav>
+            <ul>
+                <li>Phone number: <a href="tel:+375447356552"> +375 (44) 735-65-52</a></li>
+                <li>Mail: <a href="mail:vova-savchenko-06@mail.ru"> vova-savchenko-06@mail.ru</a></li>
+                <li><a href="https://www.instagram.com/vovasavchenko55/"> Instagram</a></li>
+                <li><a href="https://github.com/ReksusE"> GitHub</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100031301180303"> Facebook</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+</html>
