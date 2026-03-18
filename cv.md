@@ -66,3 +66,9 @@ static void FindMinMaxPrice()
     
     Console.WriteLine($"Название: {result.Name}, Цена: {result.Price} руб.");
 
+## 📜 Courses & Certificates
+- The Complete Web Development Bootcamp (2024) – Udemy (Angela Yu)
+- CS50's Introduction to Computer Science – Harvard edX (2023)
+- Frontend Masters: React with TypeScript (2024)
+- SQL and Database Design – Stepik (2023)
+- freeCodeCamp: Responsive Web Design
