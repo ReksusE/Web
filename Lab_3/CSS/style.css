@@ -668,3 +668,57 @@ h1, h2, h3, h4, h5, h6{
   justify-content: space-between;
   letter-spacing: 0.25px;
 }
+
+/* MAIN stats--section */
+
+.stats--section{
+  margin-top: 96.39px;
+}
+
+.stats{
+  display: flex;
+  flex-direction: column;
+  gap: 37px;
+}
+
+.stats--image{
+  display: flex;
+  justify-content: end;
+}
+
+.card--wrapper{
+  flex-shrink: 0;
+  padding:0 50px;
+}
+
+.card--wrapper h2{
+  color: #0F0F0F;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2; /* 120% */
+  margin-bottom: 63.61px;
+  letter-spacing: 1.12px;
+}
+
+.stats--grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
+}
+
+.stats--card{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 246.5px;
+  height: 164px;
+}
+
+.stats--card p{
+  color: #0F0F0F;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6; /* 160% */
+  letter-spacing: 0.1px;
+}
