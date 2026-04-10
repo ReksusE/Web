@@ -310,10 +310,6 @@ h1, h2, h3, h4, h5, h6{
   flex-shrink: 0;
 }
 
-.header--button:hover {
-  background: #d67a78;
-}
-
 /* MAIN--course--hero */
 
 .course--section{
@@ -1837,4 +1833,174 @@ h1, h2, h3, h4, h5, h6{
   .review--card{
     padding: 20px;
   }
+}
+
+/* Добавление анимаций(Lab_5) */
+
+@keyframes slideUpFade {
+  from{ opacity: 0; transform: translateY(40px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+.course--hero{
+  animation: slideUpFade 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes slideInRightFade {
+  from{ opacity: 0; transform: translatex(50px); }
+  to{ opacity: 1; transform: translatex(0); }
+}
+.course--image{
+  animation: slideInRightFade 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes pulseAttention {
+  0% { box-shadow: 0 0 0 0 rgba(228, 141, 139, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(228, 141, 139, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(228, 141, 139, 0); }
+}
+.header--button {
+  animation: pulseAttention 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.header--button:hover,
+.btn--primary:hover,
+.btn--secondary:hover,
+.plan--button:hover {
+  transform: scale(1.05);
+}
+
+.header--button:hover,
+.btn--primary:hover {
+  background: #eeb6b5;
+  color: #333B4A;
+}
+
+.btn--secondary:hover {
+  background: #757575;
+  color: #EDEDED;
+}
+
+.features--card {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  border-radius: 12px;
+}
+.features--card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+}
+
+.features--card img {
+  transition: transform 0.3s ease;
+}
+.features--card:hover img {
+  transform: scale(1.15) rotate(5deg);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+.teacher--image, .editing--image {
+  animation: float 6s ease-in-out infinite;
+}
+
+.include--card {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.include--card:hover {
+  transform: scale(1.1);
+}
+
+.curriculum--list li {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+.curriculum--list li:hover {
+  transform: translateX(10px);
+  background-color: #e4e4e4;
+}
+
+.stats--card {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+}
+.stats--card:hover {
+  transform: translateY(-5px);
+  background-color: #f5f5f5;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+.stats--card:hover .card--svg {
+  animation: wiggle 0.5s ease;
+}
+
+.pricing--card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.pricing--card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  z-index: 10;
+  position: relative;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 10px rgba(1, 124, 255, 0.1); }
+  50% { box-shadow: 0 0 25px rgba(1, 124, 255, 0.4); }
+  100% { box-shadow: 0 0 10px rgba(1, 124, 255, 0.1); }
+}
+.pricing--card.premium:hover {
+  animation: glow 3s infinite;
+}
+
+.review--card {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+.review--card:hover {
+  transform: translateY(-8px) rotate(1deg);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.questions--item--content {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.questions--item:hover .questions--item--content {
+  transform: translateX(15px);
+}
+
+.footer--column ul li a {
+  display: inline-block;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.footer--column ul li a:hover {
+  color: #017CFF;
+  transform: translateX(6px);
+}
+
+.a--header {
+  position: relative;
+  text-decoration: none !important; 
+}
+.a--header::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #D87775;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.a--header:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
