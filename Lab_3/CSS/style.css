@@ -822,3 +822,127 @@ h1, h2, h3, h4, h5, h6{
   line-height: 30.8px; /* 140% */
   letter-spacing: 0.35px;
 }
+
+/* MAIN pricing--sectoin */
+
+.pricing--section{
+  margin-top: 122px;
+  background:#E48D8B;
+  padding: 122px 0;
+}
+
+.pricing{
+  max-width: 1230px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pricing--headline h2{
+  color: #FFF;
+  width: 650px;
+  height: 109px;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.2; /* 120% */
+  letter-spacing: 1.6px;
+}
+
+.pricing--grid{
+  display: flex;
+  width: 900px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.pricing--card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FFF;
+  box-shadow: 0 0 0 0 rgba(234, 239, 240, 0.93);
+  width: 430px;
+}
+
+.pricing--card h3{
+  color: #464646;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.2; /* 120% */
+  letter-spacing: 1.3px;
+}
+
+.current--price--card{
+  color: #017CFF;
+  text-align: center;
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 1.24; /* 123.871% */
+  letter-spacing: 1.1px;
+}
+
+.old--price--card{
+  color: #757575;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.12; /* 112% */
+  letter-spacing: 1px;
+  text-decoration-line : line-through;
+}
+
+.pricing--card p{
+  color: #464646;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.59; /* 158.824% */
+  width: 230px;
+}
+
+.plan--button{
+  width: 208px;
+  height: 43px;
+  background: #017CFF;
+  color: #FFF;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5; /* 150% */
+  border: none;
+  margin: 13px 0 56px 0;
+}
+
+.pricing--card ul{
+  display: flex;
+  width: 334px;
+  padding:0 0 10px 0;
+  margin: 0 0 32px 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  list-style: none;
+}
+
+.pricing--card ul li{
+  color: #464646;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.48; /* 148.235% */
+  display: flex;
+  padding-left: 9px;
+
+}
+
+.pricing--image{
+  margin: 48px 0 11px 0;
+}
+
+.plan--price{
+  margin: 16px 0 35px 0;
+}
