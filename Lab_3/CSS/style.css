@@ -1122,3 +1122,719 @@ h1, h2, h3, h4, h5, h6{
 .footer--column ul li{
   margin-bottom: 9px;
 }
+
+/* ========== MEDIA QUERIES ========== */
+
+@media (max-width: 1257px) {
+    .container--big,
+    .container--small {
+        width: 100%;
+        padding: 0 15px;
+    }
+    
+    .header--coursely {
+        padding: 0 30px;
+    }
+    
+    .course--section {
+        gap: 50px;
+        margin-top: 80px;
+    }
+    
+    .course--hero h1 {
+        font-size: 40px;
+    }
+    
+    .course--hero p {
+        font-size: 18px;
+        margin-right: 0;
+    }
+    
+    .features--grid {
+        gap: 30px;
+    }
+    
+    .features--card {
+        width: calc(33.33% - 20px);
+        min-width: 280px;
+    }
+    
+    .teacher--card,
+    .editing--card {
+        gap: 50px;
+    }
+    
+    .teacher--content h2,
+    .editing--content h2 {
+        font-size: 32px;
+    }
+    
+    .stats--grid {
+        gap: 30px;
+    }
+    
+    .pricing--grid {
+        width: 100%;
+        gap: 30px;
+    }
+    
+    .pricing--card {
+        width: calc(50% - 15px);
+        min-width: 320px;
+    }
+    
+    .review--grid {
+        width: 100%;
+        gap: 25px;
+    }
+    
+    .review--card--wrapper {
+        width: calc(33.33% - 17px);
+        min-width: 300px;
+    }
+    
+    .footer--container {
+        padding: 40px 20px;
+        gap: 40px;
+    }
+}
+
+/* Планшеты (до 992px) */
+@media (max-width: 1150px) {
+    /* Шапка */
+    .header--coursely {
+        padding: 0 20px;
+    }
+    
+    .header--coursely h1 {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+    
+    /* Hero секция */
+    .course--section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+        margin-top: 60px;
+    }
+    
+    .course--hero {
+        max-width: 100%;
+        margin-top: 0;
+    }
+    
+    .course--hero p {
+        margin-right: 0;
+    }
+    
+    .price {
+        justify-content: center;
+    }
+    
+    .course--button {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .course--image {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+    
+    /* Features секция */
+    .feature--section {
+        margin-top: 80px;
+    }
+    
+    .features--grid {
+        justify-content: center;
+    }
+    
+    .features--card {
+        width: calc(50% - 20px);
+        text-align: center;
+        align-items: center;
+    }
+    
+    /* Teacher секция */
+    .teacher--section {
+        margin-top: 80px;
+    }
+    
+    .teacher--card {
+        flex-direction: column;
+        height: auto;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .teacher--content {
+        width: 100%;
+        align-items: center;
+    }
+    
+    .teacher--card img {
+        margin: 0;
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .teacher--content h2 {
+        text-align: center;
+    }
+    
+    .teacher--content p {
+        text-align: center;
+    }
+    
+    /* Editing секция */
+    .editing--section {
+        margin-top: 60px;
+    }
+    
+    .editing--card {
+        flex-direction: column-reverse;
+        height: auto;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .editing--content {
+        width: 100%;
+        align-items: center;
+    }
+    
+    .editing--image {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .editing--content h2 {
+        text-align: center;
+    }
+    
+    .editing--content p {
+        text-align: center;
+    }
+    
+    /* Included секция */
+    .included--section {
+        margin-top: 60px;
+        padding: 60px 20px;
+    }
+    
+    .included h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    .included--list {
+        gap: 25px;
+    }
+    
+    .include--card {
+        /* width: 160px; */
+        height: auto;
+        gap: 15px;
+    }
+    
+    .include--card h3 {
+        font-size: 60px;
+    }
+    
+    /* Curriculum секция */
+    .curriculum--section {
+        margin-top: 60px;
+    }
+    
+    .curriculum h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    .curriculum--list {
+        width: 90%;
+    }
+    
+    .curriculum--list li {
+        width: 100%;
+        font-size: 16px;
+        height: auto;
+        min-height: 60px;
+    }
+    
+    /* Stats секция */
+    .stats--section {
+        margin-top: 60px;
+    }
+    
+    .stats {
+        gap: 30px;
+    }
+    
+    .card--wrapper {
+        padding: 0 20px;
+    }
+    
+    .card--wrapper h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    .stats--grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .stats--card {
+        width: 100%;
+        height: auto;
+    }
+    
+    .stats--image {
+      display: none;
+    }
+    
+    /* Testimonials секция */
+    .testimonials--section {
+        height: auto;
+        min-height: 500px;
+        padding: 60px 20px;
+        margin-top: 60px;
+    }
+    
+    .testimonials--text {
+        font-size: 20px;
+    }
+    
+    /* Questions секция */
+    .questions {
+        margin-top: 40px;
+        padding: 0 20px;
+    }
+    
+    .questions h2 {
+        font-size: 32px;
+    }
+    
+    .questions--item {
+        height: auto;
+        min-height: 70px;
+    }
+    
+    .questions--item--content p {
+        font-size: 18px;
+    }
+    
+    /* Pricing секция */
+    .pricing--section {
+        margin-top: 60px;
+        padding: 60px 20px;
+    }
+    
+    .pricing--headline h2 {
+        width: 100%;
+        height: auto;
+        font-size: 32px;
+    }
+    
+    .pricing--grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pricing--card {
+        width: 100%;
+        max-width: 450px;
+    }
+    
+    .pricing--card h3 {
+        font-size: 32px;
+    }
+    
+    .pricing--card ul {
+        width: 90%;
+    }
+    
+    /* Reviews секция */
+    .reviews--section {
+        margin-top: 60px;
+    }
+    
+    .review h2 {
+        font-size: 32px;
+    }
+    
+    .review--grid {
+        width: 100%;
+        height: auto;
+        margin-top: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .review--card--wrapper {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        padding: 0;
+    }
+    
+    /* Footer */
+    .footer {
+        margin-top: 60px;
+        min-height: auto;
+        padding: 40px 0;
+    }
+    
+    .footer--container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        gap: 40px;
+        padding: 0 20px;
+    }
+    
+    .footer--info {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .footer--logo--image {
+        margin: 0 auto 20px auto;
+    }
+    
+    .footer--description {
+        margin: 0 auto 13px auto;
+    }
+    
+    .footer--link {
+        justify-content: center;
+        width: 100%;
+        height: auto;
+    }
+    
+    .footer--column {
+        height: auto;
+        text-align: center;
+    }
+}
+
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+    /* Шапка */
+    .header--templates {
+        height: auto;
+        padding: 10px 15px;
+    }
+    
+    .header--coursely h1 {
+        display: none;
+    }
+    
+    .header--button {
+        width: 100px;
+        height: 32px;
+        font-size: 13px;
+    }
+    
+    /* Hero секция */
+    .course--hero h1 {
+        font-size: 32px;
+    }
+    
+    .course--hero p {
+        font-size: 16px;
+    }
+    
+    .current--price {
+        font-size: 28px;
+    }
+    
+    .old--price {
+        font-size: 18px;
+    }
+    
+    .btn--primary,
+    .btn--secondary {
+        width: 140px;
+        font-size: 14px;
+    }
+    
+    /* Features секция */
+    .feature--section {
+        margin-top: 50px;
+    }
+    
+    .features--card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .features--card h3 {
+        font-size: 22px;
+    }
+    
+    .features--card p {
+        font-size: 16px;
+    }
+    
+    /* Teacher секция */
+    .teacher--content h2 {
+        font-size: 28px;
+    }
+    
+    .teacher--content p {
+        font-size: 16px;
+    }
+    
+    /* Editing секция */
+    .editing--content h2 {
+        font-size: 28px;
+    }
+    
+    .editing--content p {
+        font-size: 16px;
+    }
+    
+    /* Included секция */
+    .included h2 {
+        font-size: 28px;
+    }
+    
+    /* .include--card {
+        width: 140px;
+    } */
+    
+    .include--card h3 {
+        font-size: 48px;
+    }
+    
+    .include--card p {
+        font-size: 14px;
+    }
+    
+    /* Curriculum секция */
+    .curriculum h2 {
+        font-size: 28px;
+    }
+    
+    .curriculum--list li {
+        font-size: 14px;
+        padding: 0 16px;
+    }
+    
+    /* Stats секция */
+    .card--wrapper h2 {
+        font-size: 28px;
+    }
+    
+    .stats--grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .stats--card {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        gap: 16px;
+        padding: 20px;
+    }
+    
+    .card--svg {
+        margin: 0;
+        flex-shrink: 0;
+    }
+    
+    /* Testimonials секция */
+    .testimonials--text {
+        font-size: 18px;
+    }
+    
+    /* Questions секция */
+    .questions h2 {
+        font-size: 28px;
+    }
+    
+    .questions--item--content p {
+        font-size: 16px;
+    }
+
+    .questions--image{
+      display: none;
+    }
+    
+    /* Pricing секция */
+    .pricing--headline h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    
+    .pricing--card h3 {
+      font-size: 28px;
+    }
+    
+    .current--price--card {
+        font-size: 28px;
+    }
+    
+    .plan--button {
+        width: 180px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .pricing--card ul li {
+        font-size: 15px;
+    }
+    
+    /* Reviews секция */
+    .review h2 {
+        font-size: 28px;
+    }
+    
+    .text--wrapper p {
+        font-size: 14px;
+    }
+    
+    .name--wrapper h3 {
+        font-size: 14px;
+    }
+    
+    /* Footer */
+    .footer--logo {
+        font-size: 24px;
+    }
+    
+    .footer--description {
+        font-size: 14px;
+    }
+    
+    .footer--credit {
+        font-size: 12px;
+    }
+    
+    .footer--link {
+        gap: 40px;
+    }
+    
+    .footer--column h3 {
+        font-size: 12px;
+    }
+    
+    .footer--column a {
+        font-size: 13px;
+    }
+}
+
+/* Маленькие телефоны (до 480px) */
+@media (max-width: 480px) {
+    /* Шапка */
+    .header--templates p {
+        font-size: 11px;
+    }
+    
+    .a--header {
+        font-size: 11px;
+    }
+    
+    .header--button {
+        width: 90px;
+        height: 30px;
+        font-size: 12px;
+    }
+    
+    /* Hero секция */
+    .course--hero h1 {
+        font-size: 26px;
+    }
+    
+    .course--hero p {
+        font-size: 14px;
+    }
+    
+    .course--button {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .btn--primary {
+        margin-right: 0;
+    }
+    
+    /* Features секция */
+    .features--card h3 {
+        font-size: 20px;
+    }
+    
+    .features--card p {
+        font-size: 14px;
+    }
+    
+    /* Teacher секция */
+    .teacher--content h2 {
+        font-size: 24px;
+    }
+    
+    /* Editing секция */
+    .editing--content h2 {
+        font-size: 24px;
+    }
+    
+    /* Included секция */
+    .included--list {
+        gap: 20px;
+    }
+    
+    /* .include--card {
+        width: 120px;
+    } */
+    
+    .include--card h3 {
+        font-size: 40px;
+    }
+    
+    /* Pricing секция */
+    .pricing--card {
+        padding: 20px;
+    }
+    
+    .pricing--card h3 {
+        font-size: 24px;
+    }
+    
+    .plan--button {
+        width: 160px;
+        height: 38px;
+        font-size: 14px;
+    }
+    
+    /* Footer */
+    .footer--link {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .footer--column {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .footer--column ul li a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 375px){
+  .review--card{
+    padding: 20px;
+  }
+}
