@@ -201,7 +201,7 @@ svg * {
 }
 
 body{
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #0F0F0F;
@@ -310,6 +310,11 @@ h1, h2, h3, h4, h5, h6{
   flex-shrink: 0;
 }
 
+.header--button a{
+  color: #FFF;
+  text-decoration: none;
+}
+
 /* MAIN--course--hero */
 
 .course--section{
@@ -394,6 +399,11 @@ h1, h2, h3, h4, h5, h6{
   flex-shrink: 0;
   margin-right: 12px;
   padding: 0;
+}
+
+.btn--primary a{
+  color: #FFF;
+  text-decoration: none;
 }
 
 .btn--secondary{

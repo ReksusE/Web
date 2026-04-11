@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог курсов - Coursely</title>
+    <link rel="stylesheet" href="./CSS/style.css"> 
+    <link rel="stylesheet" href="./CSS/catalog.css"> 
+    <script src="/JavaScript/catalog.js" defer></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper--coursely">
+            <div class="container--big">
+                <div class="header--coursely catalog--header">
+                    <a href="/" class="header--logo">
+                        <img 
+                        src="/Image/Logo.png" 
+                        alt="Coursely Logo" 
+                        class="header--logo--image"
+                        width="141" 
+                        height="27" 
+                        loading="lazy"
+                        >
+                    </a>
+                    <h1>КАТАЛОГ КУРСОВ (УСЛУГ)</h1>
+                    <button class="catalog--header--button" type="button">
+                        <a href="index.html" class="a--header">Вернуться на главную</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container--big">
+        <section class="controls--section">
+            <input type="text" id="searchInput" placeholder="Search by name or description..." class="control--input">
+            
+            <select id="categorySelect" class="control--select">
+                <option value="All">All categories</option>
+                <option value="Audio">Audio</option>
+                <option value="Video">Video</option>
+                <option value="Design">Design</option>
+                <option value="Marketing">Marketing</option>
+            </select>
+
+            <select id="sortSelect" class="control--select">
+                <option value="default">Default sorting</option>
+                <option value="priceAsc">Cheaper at first (Price)</option>
+                <option value="priceDesc">More expensive at first (Price)</option>
+                <option value="nameAsc">By name (A-Z)</option>
+                <option value="ratingDesc">By rating (Decreasing)</option>
+            </select>
+        </section>
+
+        <section class="array--methods--section">
+            <h3>Testing array methods:</h3>
+            <div class="buttons--grid">
+                <button id="btnMap">1. Map (-20% discount)</button>
+                <button id="btnFilter">2. Filter (Price < $100)</button>
+                <button id="btnReduce">3. Reduce ('Design' only)</button>
+                <button id="btnSort">4. Sort (Worst rating)</button>
+                <button id="btnSlice">5. Slice (First 4 courses)</button>
+                <button id="btnReverse">6. Reverse (Backwards)</button>
+                <button id="btnFind">7. Find (ID = 3)</button>
+                <button id="btnConcat">8. Concat (+1 Bonus)</button>
+                <button id="btnSplice">9. Splice (Delete the first 5)</button>
+                <button id="btnShift">10. Shift (Without the first course)</button>
+                <button id="btnReset" class="reset--btn">RESET EVERYTHING</button>
+            </div>
+        </section>
+
+        <div id="catalog-container" class="catalog--grid">
+        </div>
+    </main>
+</body>
+</html>
