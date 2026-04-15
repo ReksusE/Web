@@ -218,20 +218,47 @@ document.getElementById('btnShift').addEventListener('click', () => {
     renderCards(shiftedArrey);
 });
 
-//11
-document.getElementById('btnReset').addEventListener('click', () => {
-    
-});
 
-
-const searchInput = getElementById('searchInput');
-const categorySelect = getElementById('categorySelect');
-const sortSelect = getElementById('sortSelect');
+const searchInput = document.getElementById('searchInput');
+const categorySelect = document.getElementById('categorySelect');
+const sortSelect = document.getElementById('sortSelect');
+const btnReset = document.getElementById('btnReset');
 
 function applyFilters() {
     const query = searchInput.value.toLowerCase();
     const category = categorySelect.value;
     const sortBy = sortSelect.value;
 
-    let filteredData = [...catalogData];
+
+    let filteredData = catalogData.filter(item => {
+        const matchesSearch = item.title.toLowerCase().includes(query) || 
+                              item.description.toLowerCase().includes(query);
+        const matchesCategory = category === 'All' || item.category === category;
+        
+        return matchesSearch && matchesCategory;
+    });
+
+
+    if (sortBy === 'priceAsc') {
+        filteredData.sort((a, b) => a.price - b.price);
+    } else if (sortBy === 'priceDesc') {
+        filteredData.sort((a, b) => b.price - a.price);
+    } else if (sortBy === 'nameAsc') {
+        filteredData.sort((a, b) => a.title.localeCompare(b.title));
+    } else if (sortBy === 'ratingDesc') {
+        filteredData.sort((a, b) => b.rating - a.rating);
+    }
+
+    renderCards(filteredData);
 }
+
+searchInput.addEventListener('input', applyFilters);
+categorySelect.addEventListener('change', applyFilters);
+sortSelect.addEventListener('change', applyFilters);
+
+btnReset.addEventListener('click', () => {
+    searchInput.value = '';
+    categorySelect.value = 'All';
+    sortSelect.value = 'default';
+    renderCards(catalogData);
+});
