@@ -1,0 +1,141 @@
+{
+    "courses": [
+        { 
+            "id": "1", 
+            "title": "Podcast Launch Pro", 
+            "description": "Полный курс по запуску успешного подкаста с нуля.", 
+            "price": 120, 
+            "rating": 4.9, 
+            "category": "Audio", 
+            "imageUrl": "./Image/Catalog/catalog__img__1.jpg" 
+        },
+        { 
+            "id": "2", 
+            "title": "Video Editing Basics", 
+            "description": "Основы видеомонтажа для начинающих в Premiere Pro.", 
+            "price": 80, 
+            "rating": 4.5, 
+            "category": "Video", 
+            "imageUrl": "./Image/Catalog/catalog__img__2.jpg" 
+        },
+        { 
+            "id": "3", 
+            "title": "Advanced Audio Mixing", 
+            "description": "Сведение звука и мастеринг для профессионалов.", 
+            "price": 150, 
+            "rating": 4.8, 
+            "category": "Audio", 
+            "imageUrl": "./Image/Catalog/catalog__img__3.jpg" 
+        },
+        { 
+            "id": "4", 
+            "title": "Figma for Web Design", 
+            "description": "Создание современных интерфейсов и лендингов.", 
+            "price": 99, 
+            "rating": 4.7, 
+            "category": "Design", 
+            "imageUrl": "./Image/Catalog/catalog__img__4.jpg" 
+        },
+        { 
+            "id": "5", 
+            "title": "YouTube Growth", 
+            "description": "Маркетинг и алгоритмы: как набрать первый миллион просмотров.", 
+            "price": 199, 
+            "rating": 5.0, 
+            "category": "Marketing", 
+            "imageUrl": "./Image/Catalog/catalog__img__5.jpg" 
+        },
+        { 
+            "id": "6", 
+            "title": "After Effects Magic", 
+            "description": "Создание крутых анимаций и визуальных эффектов.", 
+            "price": 140, 
+            "rating": 4.6, 
+            "category": "Video", 
+            "imageUrl": "./Image/Catalog/catalog__img__6.jpg" 
+        },
+        { 
+            "id": "7", 
+            "title": "Voice Acting Masterclass", 
+            "description": "Искусство озвучки и постановки голоса.", 
+            "price": 70, 
+            "rating": 4.3, 
+            "category": "Audio", 
+            "imageUrl": "./Image/Catalog/catalog__img__7.jpg" 
+        },
+        { 
+            "id": "8", 
+            "title": "Photoshop Retouching", 
+            "description": "Профессиональная ретушь и цветокоррекция фотографий.", 
+            "price": 85, 
+            "rating": 4.4, 
+            "category": "Design", 
+            "imageUrl": "./Image/Catalog/catalog__img__8.jpg" 
+        },
+        { 
+            "id": "9", 
+            "title": "Social Media Advertising", 
+            "description": "Настройка таргетированной рекламы с высоким ROI.", 
+            "price": 160, 
+            "rating": 4.8, 
+            "category": "Marketing", 
+            "imageUrl": "./Image/Catalog/catalog__img__9.jpg" 
+        },
+        { 
+            "id": "10", 
+            "title": "Color Grading Pro", 
+            "description": "Цветокоррекция видео в DaVinci Resolve.", 
+            "price": 110, 
+            "rating": 4.9, 
+            "category": "Video", 
+            "imageUrl": "./Image/Catalog/catalog__img__10.jpg" 
+        },
+        { 
+            "id": "11", 
+            "title": "Logo Design Principles", 
+            "description": "Теория и практика создания коммерческих логотипов.", 
+            "price": 65, 
+            "rating": 4.2, 
+            "category": "Design", 
+            "imageUrl": "./Image/Catalog/catalog__img__11.jpg" 
+        },
+        { 
+            "id": "12", 
+            "title": "SEO Fundamentals", 
+            "description": "Продвижение сайтов в топ поисковых систем.", 
+            "price": 90, 
+            "rating": 4.5, 
+            "category": "Marketing", 
+            "imageUrl": "./Image/Catalog/catalog__img__12.jpg" 
+        },
+        { 
+            "id": "13", 
+            "title": "Sound Design Lab", 
+            "description": "Создание уникальных звуковых эффектов для кино и игр.", 
+            "price": 130, 
+            "rating": 4.7, 
+            "category": "Audio", 
+            "imageUrl": "./Image/Catalog/catalog__img__13.jpg" 
+        },
+        { 
+            "id": "14", 
+            "title": "Typography in Web", 
+            "description": "Искусство шрифтов на веб-страницах.", 
+            "price": 50, 
+            "rating": 4.1, 
+            "category": "Design", 
+            "imageUrl": "./Image/Catalog/catalog__img__14.jpg" 
+        },
+        { 
+            "id": "15", 
+            "title": "Content Strategy", 
+            "description": "Создание контент-плана, который продает.", 
+            "price": 105, 
+            "rating": 4.6, 
+            "category": "Marketing", 
+            "imageUrl": "./Image/Catalog/catalog__img__15.jpg" 
+        }
+    ],
+    "favorites": [],
+    "cart": []
+}
