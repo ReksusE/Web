@@ -315,6 +315,41 @@ h1, h2, h3, h4, h5, h6{
   text-decoration: none;
 }
 
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    font-size: 15px;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.3s;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #E48D8B;
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::after, 
+.nav-item.active::after {
+    width: 100%;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: #E48D8B;
+}
+
 /* MAIN--course--hero */
 
 .course--section{

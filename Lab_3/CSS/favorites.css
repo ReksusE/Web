@@ -1,0 +1,22 @@
+.page--title {
+    margin: 40px 0;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    color: #333;
+}
+
+.btn-remove {
+    background: #ccc;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-remove:hover {
+    background: #ff4d4d; /* Красный при наведении */
+}

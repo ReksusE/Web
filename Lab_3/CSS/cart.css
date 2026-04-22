@@ -1,0 +1,73 @@
+.cart--list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Горизонтальная карточка для корзины */
+.cart--item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    gap: 20px;
+}
+
+.cart--item img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart--item-info {
+    flex-grow: 1;
+}
+
+.cart--item-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.qty-input {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.cart--summary {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: right;
+}
+
+.total--amount {
+    font-size: 24px;
+    font-weight: bold;
+    color: #E48D8B;
+    margin-left: 10px;
+}
+
+.btn-checkout {
+    background: #E48D8B;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-checkout:hover {
+    background: #d17a78;
+    transform: scale(1.05);
+}
