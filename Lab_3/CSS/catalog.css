@@ -1,21 +1,21 @@
 .catalog--header--button {
-  width: auto;
-  height: 36px;
-  color: #FFF;
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.6;
-  background: #E48D8B;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s;
-  flex-shrink: 0;
+    width: auto;
+    height: 36px;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.6;
+    background: #E48D8B;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    flex-shrink: 0;
 }
 
 .catalog--header--button a{
-  color: #FFF;
-  font-weight: bold;
-  text-decoration: none;
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .catalog--header h1{
@@ -138,7 +138,7 @@
 }
 
 .price{
-    color: #017CFF; 
+    color: #017CFF;
     font-size: 18px;
     margin: 0;
 }
