@@ -2,11 +2,10 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Coursely | Favorites</title>
-    <link rel="stylesheet" href="./CSS/style.css">
-    <link rel="stylesheet" href="./CSS/catalog.css">
-    <link rel="stylesheet" href="./CSS/favorites.css">
-    <script src="./JavaScript/favorites.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coursely | Feedback</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/feedback.css">
 </head>
 <body>
     <header class="header">
@@ -32,9 +31,9 @@
                     <div class="nav-links">
                         <a href="index.html" class="nav-item">Главная</a>
                         <a href="catalog.html" class="nav-item">Каталог</a>
-                        <a href="favorites.html" class="nav-item active">Избранное</a>
+                        <a href="favorites.html" class="nav-item">Избранное</a>
                         <a href="cart.html" class="nav-item">Корзина</a>
-                        <a href="feedback.html" id="feedback-link" class="nav-item">Отзывы</a>
+                        <a href="feedback.html" id="feedback-link" class="nav-item active">Отзывы</a>
                         <a href="admin.html" id="admin-link" class="nav-item">Админ-панель</a>
                     </div>
 
@@ -46,23 +45,37 @@
         </div>
     </header>
 
-    <main class="container--big">
-        <h1 class="page--title">ВАШИ ЗАКЛАДКИ</h1>
-        <div id="favorites-container" class="catalog--grid">
-            </div>
+    <main class="feedback--section">
+        <div class="container--small">
+            <h1 class="page--title">Оставить отзыв</h1>
+            
+            <div id="feedback-access-block"></div>
+
+            <form id="feedback-form" class="feedback__form" style="display: none;">
+                <div class="feedback__field">
+                    <label for="course-select" class="feedback__label">Выберите купленный курс <span class="auth__required">*</span></label>
+                    <select id="course-select" class="feedback__select" required>
+                        <option value="" disabled selected>Загрузка ваших курсов...</option>
+                    </select>
+                    <span class="feedback__error">Обязательно выберите курс</span>
+                </div>
+
+                <div class="feedback__field">
+                    <label for="feedback-text" class="feedback__label">Ваш отзыв <span class="auth__required">*</span></label>
+                    <textarea id="feedback-text" class="feedback__textarea" required minlength="20" maxlength="1000" placeholder="Расскажите о вашем опыте прохождения курса (мин. 20 символов)..."></textarea>
+                    <span id="char-count" class="feedback__hint">0 / 1000</span>
+                    <span class="feedback__error">Отзыв должен содержать минимум 20 символов</span>
+                </div>
+
+                <button type="submit" id="btn-submit-feedback" class="btn-primary auth__btn--primary" disabled>Отправить отзыв</button>
+            </form>
+        </div>
     </main>
 
     <footer class="footer">
-        <div class="container--small footer--container">
+        <div class="footer--container container--big">
             <div class="footer--info">
-                <img 
-                    src="/Image/Logo.png" 
-                    alt="Coursely Logo" 
-                    class="footer--logo--image"
-                    width="156" 
-                    height="30" 
-                    loading="lazy"                       
-                >
+                <img src="./Image/Logo.png" alt="Logo" class="footer--logo--image">
                 <p class="footer--description">The last landing page you'll ever need to launch your next course.</p>
                 <p class="footer--credit">Built by <a href="#">Nikolai Bain</a>. Powered by <a href="#">Webflow</a></p>
             </div>
@@ -73,23 +86,20 @@
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Contact</a></li>
                         <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
                     </ul>
                 </div>
-
                 <div class="footer--column">
                     <h3>Admin</h3>
                     <ul>
                         <li><a href="#">Style Guide</a></li>
                         <li><a href="#">Licenses</a></li>
-                        <li><a href="#">Instructions</a></li>
-                        <li><a href="#">Password</a></li>
-                        <li><a href="#">404</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script src="/JavaScript/main.js"></script>
+    <script src="/JavaScript/feedback.js"></script>
 </body>
 </html>

@@ -19,7 +19,7 @@ function renderCart(items) {
                 <div style="margin: 10px 0;">
                     <span>Кол-во: </span>
                     <input type="number" value="${item.quantity || 1}" min="1" 
-                           onchange="updateQuantity('${item.id}', this.value)" style="width: 50px;">
+                        onchange="updateQuantity('${item.id}', this.value)" style="width: 50px;">
                 </div>
                 <button onclick="removeFromCart('${item.id}')" class="btn-main" style="background:#ccc">Удалить</button>
             </div>
@@ -27,13 +27,11 @@ function renderCart(items) {
     `).join('');
 }
 
-// Расчет суммы (Пункт 4 требований)
 function calculateTotal(items) {
     const total = items.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
     document.getElementById('totalPrice').textContent = `Итого: $${total}`;
 }
 
-// Изменение количества (Пункт 3 требований)
 async function updateQuantity(id, newQty) {
     await fetch(`${API_URL}/cart/${id}`, {
         method: 'PATCH',
@@ -48,18 +46,53 @@ async function removeFromCart(id) {
     loadCart();
 }
 
-// Оформление покупки (Пункт 5 требований)
 async function checkout() {
-    const res = await fetch(`${API_URL}/cart`);
-    const items = (await res.json()).data || (await res.json());
+    try {
+        const res = await fetch(`${API_URL}/cart`);
+        const cartData = await res.json();
+        const items = cartData.data || cartData;
 
-    // Очищаем корзину (удаляем каждый элемент)
-    for (let item of items) {
-        await fetch(`${API_URL}/cart/${item.id}`, { method: 'DELETE' });
+        if (items.length === 0) {
+            alert("Ваша корзина пуста!");
+            return;
+        }
+
+        const currentUserId = localStorage.getItem('currentUserId'); 
+        
+        const totalAmount = items.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
+
+        const newOrder = {
+            userId: currentUserId,
+            date: new Date().toISOString(),
+            items: items.map(item => ({
+                courseId: item.id,  // ← Используем ID из курса
+                title: item.title,
+                price: item.price,
+                quantity: item.quantity || 1
+            })),
+            totalAmount: totalAmount
+        };
+
+        const orderResponse = await fetch(`${API_URL}/orders`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newOrder)
+        });
+
+        if (!orderResponse.ok) throw new Error("Ошибка при создании заказа");
+
+        for (let item of items) {
+            await fetch(`${API_URL}/cart/${item.id}`, { method: 'DELETE' });
+        }
+
+        alert("Покупка успешно оформлена! Заказ сохранен в истории.");
+        
+        loadCart(); 
+
+    } catch (error) {
+        console.error("Ошибка оформления заказа:", error);
+        alert("Не удалось оформить заказ. Попробуйте позже.");
     }
-
-    alert("Покупка успешно оформлена! Ваша корзина очищена.");
-    window.location.href = "index.html";
 }
 
 window.onload = loadCart;

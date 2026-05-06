@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход / Регистрация - Coursely</title>
+  <link rel="stylesheet" href="/CSS/style.css">
+  <link rel="stylesheet" href="/CSS/authorization.css">
+</head>
+<body>
+  <header class="wrapper--coursely">
+    <div class="container--small header--coursely">
+      <a href="index.html" class="header--logo"><img src="./Image/Logo.png" alt="Coursely" class="header--logo--image"></a>
+      <h1 class="header--title">Авторизация</h1>
+      <button class="header--button"><a href="index.html">На главную</a></button>
+    </div>
+  </header>
+
+  <main class="container--small auth">
+    <div class="auth__tabs">
+      <button class="auth__tab auth__tab--active" data-tab="login">Вход</button>
+      <button class="auth__tab" data-tab="register">Регистрация</button>
+    </div>
+
+    <!-- ФОРМА ВХОДА -->
+    <form id="login-form" class="auth__form auth__form--active" novalidate>
+      <fieldset class="auth__fieldset">
+        <legend class="auth__legend">Вход в аккаунт</legend>
+        <div class="auth__field">
+          <label for="login-email" class="auth__label">Email <span class="auth__required">*</span></label>
+          <input type="email" id="login-email" class="auth__input" required>
+          <span class="auth__error" id="error-login-email"></span>
+        </div>
+        <div class="auth__field">
+          <label for="login-password" class="auth__label">Пароль <span class="auth__required">*</span></label>
+          <input type="password" id="login-password" class="auth__input" required>
+          <span class="auth__error" id="error-login-password"></span>
+        </div>
+      </fieldset>
+      <button type="submit" id="btn-login" class="auth__btn--primary" disabled>Войти</button>
+    </form>
+
+    <!-- ФОРМА РЕГИСТРАЦИИ -->
+    <form id="register-form" class="auth__form" novalidate>
+      <fieldset class="auth__fieldset">
+        <legend class="auth__legend">Личные данные</legend>
+        <div class="auth__field">
+          <label for="lastName" class="auth__label">Фамилия <span class="auth__required">*</span></label>
+          <input type="text" id="lastName" class="auth__input" required>
+          <span class="auth__error" id="error-lastName"></span>
+        </div>
+        <div class="auth__field">
+          <label for="firstName" class="auth__label">Имя <span class="auth__required">*</span></label>
+          <input type="text" id="firstName" class="auth__input" required>
+          <span class="auth__error" id="error-firstName"></span>
+        </div>
+        <div class="auth__field">
+          <label for="middleName" class="auth__label">Отчество</label>
+          <input type="text" id="middleName" class="auth__input">
+        </div>
+        <div class="auth__field">
+          <label for="dob" class="auth__label">Дата рождения <span class="auth__required">*</span></label>
+          <input type="date" id="dob" class="auth__input" required>
+          <span class="auth__error" id="error-dob"></span>
+        </div>
+      </fieldset>
+
+      <fieldset class="auth__fieldset">
+        <legend class="auth__legend">Контакты</legend>
+        <div class="auth__field">
+          <label for="phone" class="auth__label">Телефон (РБ) <span class="auth__required">*</span></label>
+          <input type="tel" id="phone" class="auth__input" required placeholder="+375(29)1234567">
+          <span class="auth__error" id="error-phone"></span>
+        </div>
+        <div class="auth__field">
+          <label for="email" class="auth__label">Email <span class="auth__required">*</span></label>
+          <input type="email" id="email" class="auth__input" required>
+          <span class="auth__error" id="error-email"></span>
+        </div>
+      </fieldset>
+
+      <fieldset class="auth__fieldset">
+        <legend class="auth__legend">Пароль и Никнейм</legend>
+        <div class="auth__field auth__field--password-type">
+          <label class="auth__radio"><input type="radio" name="passType" value="auto" checked> Автогенерация</label>
+          <label class="auth__radio"><input type="radio" name="passType" value="manual"> Ввести вручную</label>
+        </div>
+        <div id="manual-pass-block" class="auth__hidden">
+          <div class="auth__field">
+            <label for="password" class="auth__label">Пароль <span class="auth__required">*</span></label>
+            <input type="password" id="password" class="auth__input" autocomplete="new-password">
+            <span class="auth__error" id="error-password"></span>
+          </div>
+          <div class="auth__field">
+            <label for="confirmPassword" class="auth__label">Повтор пароля <span class="auth__required">*</span></label>
+            <input type="password" id="confirmPassword" class="auth__input" autocomplete="new-password">
+            <span class="auth__error" id="error-confirmPassword"></span>
+          </div>
+        </div>
+
+        <div class="auth__field">
+          <label for="nickname" class="auth__label">Никнейм <span class="auth__required">*</span></label>
+          <div class="auth__nickname-group">
+            <input type="text" id="nickname" class="auth__input" readonly>
+            <button type="button" id="btn-regenerate" class="auth__btn--secondary">🔄</button>
+          </div>
+          <small id="nick-attempts" class="auth__hint">Попыток: 5</small>
+          <span class="auth__error" id="error-nickname"></span>
+        </div>
+      </fieldset>
+
+      <div class="auth__field auth__field--checkbox">
+        <label>
+          <input type="checkbox" id="agreement" required>
+          Я принимаю <a href="#" target="_blank">Соглашение пользователя</a> <span class="auth__required">*</span>
+        </label>
+        <span class="auth__error" id="error-agreement"></span>
+      </div>
+
+      <button type="submit" id="btn-register" class="auth__btn--primary" disabled>Зарегистрироваться</button>
+    </form>
+  </main>
+
+  <script src="/JavaScript/authorization.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coursely</title>
+    <title>Coursely | Home</title>
     <link rel="stylesheet" href="./CSS/style.css">
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
@@ -21,20 +21,27 @@
                 <div class="header--coursely">
                     <a href="/" class="header--logo">
                         <img 
-                            src="/Image/Logo.png" 
-                            alt="Coursely Logo" 
-                            class="header--logo--image"
-                            width="141" 
-                            height="27" 
-                            loading="lazy">
+                        src="/Image/Logo.png" 
+                        alt="Coursely Logo" 
+                        class="header--logo--image"
+                        width="141" 
+                        height="27" 
+                        loading="lazy"
+                        >
                     </a>
-                    <h1>LAUNCH A SUCCESSFUL PODCAST</h1>
+                    
                     <div class="nav-links">
                         <a href="index.html" class="nav-item active">Главная</a>
                         <a href="catalog.html" class="nav-item">Каталог</a>
                         <a href="favorites.html" class="nav-item">Избранное</a>
                         <a href="cart.html" class="nav-item">Корзина</a>
+                        <a href="feedback.html" id="feedback-link" class="nav-item">Отзывы</a>
+                        <a href="admin.html" id="admin-link" class="nav-item">Админ-панель</a>
                     </div>
+
+                    <button class="btn--primary" type="button">
+                        <a href="/authorization.html" id="auth-link">Вход</a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -52,12 +59,12 @@
                     <button class="btn--primary" type="button"><a href="/catalog.html">Enroll Now</a></button>
                     <button class="btn--secondary" type="button">
                         <img src="/Image/button_image.png"
-                         alt="button image"
-                         class="button--image"
-                         width="12px"
-                         height="27px"
-                         loading="lazy">
-                         Watch Trailer
+                        alt="button image"
+                        class="button--image"
+                        width="12px"
+                        height="27px"
+                        loading="lazy">
+                        Watch Trailer
                     </button>
                 </div>
             </div>
@@ -748,6 +755,7 @@
             </div>
         </section>
     </main>
+    
     <footer class="footer">
         <div class="container--small footer--container">
             <div class="footer--info">
@@ -787,5 +795,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="/JavaScript/main.js"></script>
 </body>
 </html>

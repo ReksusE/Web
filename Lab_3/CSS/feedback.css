@@ -1,0 +1,111 @@
+.feedback--section {
+    padding: 60px 0;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.page--title {
+    margin-bottom: 40px;
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+}
+
+.feedback__form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    animation: fadeIn 0.3s ease;
+}
+
+.feedback__field { margin-bottom: 25px; position: relative; }
+
+.feedback__label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.feedback__select, .feedback__textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    background: #fafafa;
+    transition: 0.2s;
+    outline: none;
+}
+
+.feedback__textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.feedback__select:focus, .feedback__textarea:focus {
+    border-color: #017CFF;
+    background: #fff;
+}
+
+.feedback__select.input--invalid, .feedback__textarea.input--invalid {
+    border-color: #E48D8B;
+    background: #fff5f5;
+}
+
+.feedback__hint {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #777;
+    text-align: right;
+}
+
+.feedback__error {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-size: 12px;
+    color: #E48D8B;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: 0.2s;
+}
+.feedback__error.visible { opacity: 1; transform: translateY(0); }
+
+.feedback__block--error, .feedback__block--info {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.feedback__block--error { background: #ffe6e6; color: #b00; }
+.feedback__block--info { background: #e6f7ff; color: #005bb5; }
+
+.btn-submit-active {
+    background: #E48D8B !important;
+    cursor: pointer !important;
+    opacity: 1 !important;
+}
+.btn-submit-active:hover { background: #d17a78 !important; transform: translateY(-2px); }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .feedback__form { padding: 25px; }
+    .page--title { font-size: 24px; }
+}

@@ -2,15 +2,11 @@ const API_URL = "http://localhost:3000";
 let currentPage = 1;
 const limit = 6;
 
-// 1. Загрузка данных при старте
 window.onload = () => {
     loadCatalog();
     setupEventListeners();
 };
 
-/**
- * ГЛАВНАЯ ФУНКЦИЯ: Загрузка и фильтрация (Пункты 1, 3, 4, 6, 7, 9, 10)
- */
 async function loadCatalog() {
     const search = document.getElementById('searchInput')?.value;
     const category = document.getElementById('categorySelect')?.value;
@@ -20,36 +16,32 @@ async function loadCatalog() {
 
     const params = new URLSearchParams();
     
-    // Пункт 9: Пагинация (адаптировано под JSON Server 1.0)
     params.append('_page', currentPage);
     params.append('_per_page', limit); 
 
-    // Пункт 3: Поиск (используем q для глобального поиска по всем полям)
     if (search) params.append('q', search);
 
-    // Пункт 5: Фильтрация по категории
     if (category && category !== 'All') params.append('category', category);
 
-    // Пункт 7: Фильтрация по диапазону цен
     if (minPrice) params.append('price_gte', minPrice);
     if (maxPrice) params.append('price_lte', maxPrice);
 
-    // Пункт 4: Сортировка
-    if (sort === 'priceAsc') { params.append('_sort', 'price'); params.append('_order', 'asc'); }
-    if (sort === 'priceDesc') { params.append('_sort', 'price'); params.append('_order', 'desc'); }
-    if (sort === 'ratingDesc') { params.append('_sort', 'rating'); params.append('_order', 'desc'); }
+    if (sort === 'priceAsc') { 
+        params.append('_sort', 'price'); 
+    } else if (sort === 'priceDesc') { 
+        params.append('_sort', '-price'); 
+    } else if (sort === 'ratingDesc') { 
+        params.append('_sort', '-rating'); 
+    }
 
     try {
         const response = await fetch(`${API_URL}/courses?${params}`);
         const result = await response.json();
 
-        // Обработка данных (Пункт 10)
         const courses = result.data ? result.data : result;
         
-        // Пункт 5: Использование Set для категорий (динамическое создание списка)
         updateCategorySelect(courses);
 
-        // Пункт 8: Обработка пустых результатов
         renderCards(courses);
         
         document.getElementById('pageInfo').textContent = `Страница ${currentPage}`;
@@ -58,9 +50,7 @@ async function loadCatalog() {
     }
 }
 
-/**
- * ОТОБРАЖЕНИЕ КАРТОЧЕК (Пункт 1, 8)
- */
+
 function renderCards(data) {
     const grid = document.getElementById('catalog-container');
     if (!grid) return;
@@ -90,12 +80,10 @@ function renderCards(data) {
     `).join('');
 }
 
-/**
- * ПУНКТ 5: Создание списка категорий через Set
- */
+
 function updateCategorySelect(data) {
     const select = document.getElementById('categorySelect');
-    if (!select || select.options.length > 5) return; // Чтобы не дублировать
+    if (!select || select.options.length > 5) return; 
 
     const categories = new Set(data.map(item => item.category));
     categories.forEach(cat => {
@@ -106,12 +94,6 @@ function updateCategorySelect(data) {
     });
 }
 
-/**
- * ПУНКТ 11 и 12: Добавление в корзину и избранное
- */
-/**
- * Универсальная функция добавления с проверкой на дубликаты
- */
 async function addTo(target, id) {
     console.log(`--- СТАРТ ДОБАВЛЕНИЯ: ID ${id} В ${target.toUpperCase()} ---`);
     
@@ -157,9 +139,6 @@ async function addTo(target, id) {
     }
 }
 
-/**
- * Слушатели событий для фильтров и пагинации
- */
 function setupEventListeners() {
     const inputs = document.querySelectorAll('.control--input, .control--select');
     inputs.forEach(input => {

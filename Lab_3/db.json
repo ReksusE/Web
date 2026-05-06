@@ -136,7 +136,131 @@
       "imageUrl": "./Image/Catalog/catalog__img__15.jpg"
     }
   ],
-  "favorites": [],
+  "favorites": [
+    {
+      "id": "3mGCLQ3Ttg4",
+      "title": "Podcast Launch Pro",
+      "description": "Полный курс по запуску успешного подкаста с нуля.",
+      "price": 120,
+      "rating": 4.9,
+      "category": "Audio",
+      "imageUrl": "./Image/Catalog/catalog__img__1.jpg"
+    }
+  ],
   "cart": [],
+  "users": [
+    {
+      "id": "1",
+      "role": "admin",
+      "phone": "+375291112233",
+      "email": "admin@coursely.by",
+      "dob": "1990-01-01",
+      "password": "AdminPassword1!",
+      "firstName": "Админ",
+      "lastName": "Главный",
+      "middleName": "",
+      "nickname": "AdminBoss"
+    },
+    {
+      "id": "2",
+      "role": "customer",
+      "phone": "+375334445566",
+      "email": "ivanov@mail.com",
+      "dob": "2005-05-15",
+      "password": "StrongPass123!",
+      "firstName": "Иван",
+      "lastName": "Иванов",
+      "middleName": "Иванович",
+      "nickname": "IvaIva777"
+    }
+  ],
+  "orders": [
+    {
+      "userId": "2",
+      "date": "2026-04-28T17:59:00.846Z",
+      "items": [
+        {
+          "courseId": "2",
+          "title": "Video Editing Basics",
+          "price": 80,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 80,
+      "id": "GTJHu1x5i78"
+    },
+    {
+      "userId": "2",
+      "date": "2026-04-28T18:00:38.196Z",
+      "items": [
+        {
+          "courseId": "2",
+          "title": "Video Editing Basics",
+          "price": 80,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 80,
+      "id": "efwFp0NLlxI"
+    },
+    {
+      "userId": "2",
+      "date": "2026-04-28T18:43:08.650Z",
+      "items": [
+        {
+          "courseId": "3",
+          "title": "Advanced Audio Mixing",
+          "price": 150,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 150,
+      "id": "JYBuBg0DgFQ"
+    },
+    {
+      "userId": "2",
+      "date": "2026-04-28T19:23:57.869Z",
+      "items": [
+        {
+          "courseId": "aqs7-WFE35M",
+          "title": "Content Strategy",
+          "price": 105,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 105,
+      "id": "gRiJYi_68M4"
+    },
+    {
+      "userId": "2",
+      "date": "2026-04-28T19:36:03.944Z",
+      "items": [
+        {
+          "courseId": "Z-8rla0gNb8",
+          "title": "After Effects Magic",
+          "price": 140,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 140,
+      "id": "ymFOYkUFbt4"
+    }
+  ],
+  "feedback": [
+    {
+      "id": "2",
+      "userId": "2",
+      "courseId": "1",
+      "text": "Отличный курс, узнал много нового!",
+      "date": "2026-04-26"
+    },
+    {
+      "userId": "2",
+      "courseId": "2",
+      "text": "jhfhgcghcgcghccchccc",
+      "date": "2026-04-28",
+      "id": "1KMfKXnlg7M"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
