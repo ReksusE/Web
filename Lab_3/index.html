@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coursely | Home</title>
+    <link rel="icon" type="image/jpg" href="./Image/favicon.jpg">
     <link rel="stylesheet" href="./CSS/style.css">
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
     </style>
 </head>
 <body>
-    <header class="header">
+    <div id="preloader" class="preloader">
+        <div class="preloader__spinner"></div>
+    </div>
+
+    <header class="header" data-js-header>
         <div class="header--templates">
             <p>A Webflow template for video courses.</p>
             <a href="#" class="a--header">See all templates ></a>
@@ -30,22 +35,36 @@
                         >
                     </a>
                     
-                    <div class="nav-links">
-                        <a href="index.html" class="nav-item active">Главная</a>
-                        <a href="catalog.html" class="nav-item">Каталог</a>
-                        <a href="favorites.html" class="nav-item">Избранное</a>
-                        <a href="cart.html" class="nav-item">Корзина</a>
-                        <a href="feedback.html" id="feedback-link" class="nav-item">Отзывы</a>
-                        <a href="admin.html" id="admin-link" class="nav-item">Админ-панель</a>
+                    <div class="header__overlay" data-js-header-nav>
+                        <div class="nav-links">
+                            <a href="index.html" class="nav-item active">Главная</a>
+                            <a href="catalog.html" class="nav-item">Каталог</a>
+                            <a href="favorites.html" class="nav-item">Избранное</a>
+                            <a href="cart.html" class="nav-item">Корзина</a>
+                            <a href="feedback.html" id="feedback-link" class="nav-item">Отзывы</a>
+                            <a href="admin.html" id="admin-link" class="nav-item">Админ-панель</a>
+                        </div>
+                        <button class="btn--primary" type="button">
+                            <a href="/authorization.html" id="auth-link">Вход</a>
+                        </button>
                     </div>
 
-                    <button class="btn--primary" type="button">
-                        <a href="/authorization.html" id="auth-link">Вход</a>
+                    <button 
+                    class="header__burger-button burger-button visible-mobile is-active"
+                    type="button"
+                    aria-label="Open menu"
+                    title="Open menu"
+                    data-js-header-burger-button
+                    >
+                        <span class="burger-button__line"></span>
+                        <span class="burger-button__line"></span>
+                        <span class="burger-button__line"></span>
                     </button>
                 </div>
             </div>
         </div>
     </header>
+
     <main>
         <div class="container--small course--section">
             <div class="course--hero">
@@ -797,5 +816,6 @@
     </footer>
 
     <script src="/JavaScript/main.js"></script>
+    <script src="/JavaScript/burger.js"></script>
 </body>
 </html>

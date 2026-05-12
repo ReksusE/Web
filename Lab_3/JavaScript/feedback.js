@@ -81,12 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
     async function loadPurchasedCourses() {
         try {
             console.log("Ищем заказы для пользователя с ID:", currentUserId);
-            const res = await fetch(`${API_URL}/orders?userId=${currentUserId}`);
+            const res = await fetch(`${API_URL}/orders`);
             const orders = await res.json();
             console.log("Найдено заказов:", orders.length);
 
             const purchasedMap = new Map();
-            // Собираем уникальные courseId из всех заказов пользователя
             orders.forEach(order => {
                 if (order.items) {
                     order.items.forEach(item => {

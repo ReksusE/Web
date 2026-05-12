@@ -1,29 +1,22 @@
 const API = "http://localhost:3000";
 const CURRENT_ROLE = localStorage.getItem("userRole") || "admin";
 
-// admin.js
 
 const API_URL = "http://localhost:3000";
 
-// === ПРОВЕРКА ДОСТУПА ===
 const currentUserRole = localStorage.getItem("userRole");
 const currentUserId = localStorage.getItem("currentUserId");
 
-// Если нет роли или роль не администратор — выкидываем на главную
 if (!currentUserRole || currentUserRole !== "admin") {
     alert("Доступ разрешен только администраторам!");
     window.location.href = "index.html";
 }
 
-// === ОСНОВНАЯ ЛОГИКА ПАНЕЛИ (начнется только если роль админ) ===
-
-// Инициализация
 window.addEventListener("DOMContentLoaded", () => {
     loadCourses();
     setupTabs();
 });
 
-// ... (остальной код вашей админки: loadCourses, deleteCourse и т.д.)
 
 async function init() {
   if (CURRENT_ROLE !== "admin") {
