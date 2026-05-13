@@ -2,10 +2,10 @@ const API_URL = "http://localhost:3000";
 let currentPage = 1;
 const limit = 6;
 
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
     loadCatalog();
     setupEventListeners();
-};
+});
 
 async function loadCatalog() {
     const search = document.getElementById('searchInput')?.value;
@@ -72,8 +72,8 @@ function renderCards(data) {
                     <span class="rating">★ ${item.rating}</span>
                 </div>
                 <div class="card--buttons" style="display:flex; gap:10px; margin-top:15px;">
-                    <button onclick="addTo('cart', '${item.id}')" class="btn-main">В корзину</button>
-                    <button onclick="addTo('favorites', '${item.id}')" class="btn-fav">❤️</button>
+                    <button onclick="addTo('cart', '${item.id}', event)" class="btn-main" type="button">В корзину</button>
+                    <button onclick="addTo('favorites', '${item.id}', event)" class="btn-fav" type="button">❤️</button>
                 </div>
             </div>
         </div>
@@ -94,48 +94,66 @@ function updateCategorySelect(data) {
     });
 }
 
-async function addTo(target, id) {
-    console.log(`--- СТАРТ ДОБАВЛЕНИЯ: ID ${id} В ${target.toUpperCase()} ---`);
-    
-    try {
-        console.log(`1. Делаю запрос к: ${API_URL}/${target}`);
-        const checkResponse = await fetch(`${API_URL}/${target}`);
-        const currentItems = await checkResponse.json();
-        console.log(`2. Что сейчас лежит в ${target}:`, currentItems);
-        
-        const itemsArray = currentItems.data ? currentItems.data : currentItems;
-        console.log(`3. Массив для проверки:`, itemsArray);
+async function addTo(target, id, event) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
 
-        const isDuplicate = itemsArray.some(item => String(item.id) === String(id));
-        console.log(`4. Это дубликат?`, isDuplicate);
+    console.log(`--- Попытка добавить в ${target} (ID: ${id}) ---`);
+
+    try {
+        // 2. Получаем данные о курсе из основной базы
+        const response = await fetch(`${API_URL}/courses/${id}`);
+        if (!response.ok) throw new Error("Курс не найден в базе данных");
+        const courseData = await response.json();
+
+        // 3. Проверяем, нет ли уже этого товара в целевой коллекции (cart или favorites)
+        const checkRes = await fetch(`${API_URL}/${target}`);
+        const currentItems = await checkRes.json();
+        
+        // JSON-server может возвращать массив или объект с полем data
+        const itemsArray = Array.isArray(currentItems) ? currentItems : (currentItems.data || []);
+
+        const isDuplicate = itemsArray.some(item => item.id === id);
 
         if (isDuplicate) {
-            alert(target === 'favorites' ? "Этот курс уже в избранном!" : "Этот курс уже в корзине!");
-            console.log("--- СТОП: НАЙДЕН ДУБЛИКАТ ---");
-            return; 
+            console.warn("Товар уже добавлен ранее");
+            if (window.showToast) {
+                showToast("Этот курс уже добавлен!", "error");
+            } else {
+                alert("Этот курс уже добавлен!");
+            }
+            return; // Прерываем выполнение
         }
 
-        console.log(`5. Скачиваю данные курса ${id}...`);
-        const courseResponse = await fetch(`${API_URL}/courses/${id}`);
-        const courseData = await courseResponse.json();
-        console.log(`6. Данные курса получены:`, courseData);
-
-        console.log(`7. Отправляю POST запрос...`);
+        // 4. Если дубликата нет — отправляем POST запрос
+        console.log(`Отправляю данные в ${target}...`);
         const postResponse = await fetch(`${API_URL}/${target}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(courseData)
+            body: JSON.stringify({
+                ...courseData,
+                quantity: 1
+            })
         });
 
         if (postResponse.ok) {
-            alert("Успешно добавлено!");
-            console.log("--- УСПЕХ! ---");
+            console.log("Успешно добавлено на сервер");
+            if (window.showToast) {
+                showToast("Успешно добавлено!", "success");
+            } else {
+                alert("Успешно добавлено!");
+            }
         } else {
-            console.error("Сервер ответил ошибкой:", postResponse.status);
+            throw new Error(`Ошибка сервера: ${postResponse.status}`);
         }
 
     } catch (error) {
-        console.error("!!! КРИТИЧЕСКАЯ ОШИБКА !!! :", error);
+        console.error("Ошибка при добавлении:", error);
+        if (window.showToast) {
+            showToast("Произошла ошибка при добавлении", "error");
+        }
     }
 }
 
@@ -148,10 +166,24 @@ function setupEventListeners() {
         });
     });
 
-    document.getElementById('prevPage').onclick = () => {
-        if (currentPage > 1) { currentPage--; loadCatalog(); }
-    };
-    document.getElementById('nextPage').onclick = () => {
-        currentPage++; loadCatalog();
-    };
+    const filterForm = document.querySelector('.controls--section'); 
+    if (filterForm && filterForm.tagName === 'FORM') {
+        filterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+        });
+    }
+
+    document.getElementById('prevPage')?.addEventListener('click', (e) => {
+        e.preventDefault(); 
+        if (currentPage > 1) {
+            currentPage--;
+            loadCatalog();
+        }
+    });
+
+    document.getElementById('nextPage')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentPage++;
+        loadCatalog();
+    });
 }
