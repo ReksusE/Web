@@ -144,6 +144,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+ymaps.ready(initMap);
+
+function initMap() {
+    var myMap = new ymaps.Map("yandex-map", {
+        center: [53.9045, 27.5615], // Координаты Минска (или вашего офиса)
+        zoom: 15
+    });
+
+    var myPlacemark = new ymaps.Placemark([53.9045, 27.5615], {
+        hintContent: 'Coursely Office',
+        balloonContent: 'Главный офис Coursely'
+    });
+
+    myMap.geoObjects.add(myPlacemark);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     new Preloader()
     new Toast()
