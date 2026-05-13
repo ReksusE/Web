@@ -6,6 +6,12 @@
     <title>Coursely | Home</title>
     <link rel="icon" type="image/jpg" href="./Image/favicon.jpg">
     <link rel="stylesheet" href="./CSS/style.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Yandex Maps API (Замен YOUR_API_KEY на ваш ключ, или используйте sandbox для тестов) -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU" type="text/javascript"></script>
+    <!-- Favicon (создайте файл favicon.ico в корне или используйте ссылку) -->
+    <link rel="icon" type="image/png" href="./Image/favicon.png"> 
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
     </style>
@@ -773,6 +779,60 @@
                 </div>
             </div>
         </section>
+
+        <section class="swiper-section" style="margin-top: 96px; padding-bottom: 96px;">
+            <div class="container--big">
+                <h2 style="text-align: center; margin-bottom: 40px;">Популярные курсы</h2>
+                <!-- Slider main container -->
+                <div class="swiper mySwiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="course--card">
+                                <img src="./Image/Catalog/catalog__img__1.jpg" alt="Course 1">
+                                <div class="course--card--content">
+                                    <h3>Podcast Launch Pro</h3>
+                                    <p>$120</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="course--card">
+                                <img src="./Image/Catalog/catalog__img__2.jpg" alt="Course 2">
+                                <div class="course--card--content">
+                                    <h3>Video Editing Basics</h3>
+                                    <p>$80</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="course--card">
+                                <img src="./Image/Catalog/catalog__img__3.jpg" alt="Course 3">
+                                <div class="course--card--content">
+                                    <h3>Advanced Audio Mixing</h3>
+                                    <p>$150</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="course--card">
+                                <img src="./Image/Catalog/catalog__img__4.jpg" alt="Course 4">
+                                <div class="course--card--content">
+                                    <h3>Figma for Web Design</h3>
+                                    <p>$99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
     </main>
     
     <footer class="footer">
@@ -819,5 +879,6 @@
 
     <script src="/JavaScript/main.js"></script>
     <script src="/JavaScript/burger.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>

@@ -96,6 +96,54 @@ class Toast {
     }
 }
 
+// ... существующий код main.js ...
+
+// Инициализация Swiper Slider
+document.addEventListener('DOMContentLoaded', () => {
+    // Проверяем, есть ли слайдер на странице
+    const swiperContainer = document.querySelector('.mySwiper');
+    
+    if (swiperContainer) {
+        // Убедимся, что библиотека Swiper загружена
+        if (typeof Swiper !== 'undefined') {
+            new Swiper('.mySwiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true, // Пауза при наведении
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                },
+                // Эффект перехода (опционально, можно убрать для стандартного slide)
+                effect: 'slide', 
+                speed: 800,
+            });
+        } else {
+            console.warn('Swiper library is not loaded');
+        }
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     new Preloader()
     new Toast()

@@ -112,6 +112,10 @@ html {
   scroll-behavior: smooth;
 }
 
+html.is-lock {
+  overflow: hidden;
+}
+
 body {
   /**
     Пригодится в большинстве ситуаций
@@ -1254,6 +1258,107 @@ h1, h2, h3, h4, h5, h6{
 
 .review--card--image{
   margin-bottom: 24px;
+}
+
+/* ========== SWIPER SLIDER STYLES ========== */
+.swiper-section {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.mySwiper {
+    width: 100%;
+    padding-bottom: 50px !important; /* Место для пагинации */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.swiper-slide {
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Стилизация карточки внутри слайдера, чтобы она выглядела как course--card */
+.swiper-slide .course--card {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.swiper-slide .course--card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-slide .course--card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.swiper-slide .course--card--content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.swiper-slide .course--card--content h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0F0F0F;
+}
+
+.swiper-slide .course--card--content p {
+    font-size: 16px;
+    color: #464646;
+    margin-bottom: 15px;
+}
+
+/* Кастомизация элементов управления Swiper под цвета сайта */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #E48D8B !important; /* Ваш фирменный цвет */
+    background: rgba(255, 255, 255, 0.8);
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 18px !important;
+    font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: #E48D8B !important;
+    color: #fff !important;
+    transform: scale(1.1);
+}
+
+.swiper-pagination-bullet {
+    background: #ccc !important;
+    opacity: 1 !important;
+    width: 10px !important;
+    height: 10px !important;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background: #E48D8B !important;
+    width: 25px !important;
+    border-radius: 5px !important;
 }
 
 /* footer */

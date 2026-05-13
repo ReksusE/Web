@@ -138,144 +138,24 @@
   ],
   "favorites": [
     {
-      "id": "f5G4PJMK_U0",
+      "id": "3mGCLQ3Ttg4",
       "title": "Podcast Launch Pro",
       "description": "Полный курс по запуску успешного подкаста с нуля.",
       "price": 120,
       "rating": 4.9,
       "category": "Audio",
       "imageUrl": "./Image/Catalog/catalog__img__1.jpg"
-    },
-    {
-      "id": "HqeSSWeMhfg",
-      "title": "Podcast Launch Pro",
-      "description": "Полный курс по запуску успешного подкаста с нуля.",
-      "price": 120,
-      "rating": 4.9,
-      "category": "Audio",
-      "imageUrl": "./Image/Catalog/catalog__img__1.jpg",
-      "quantity": 1
-    },
-    {
-      "id": "PgkAhKKGXj8",
-      "title": "Podcast Launch Pro",
-      "description": "Полный курс по запуску успешного подкаста с нуля.",
-      "price": 120,
-      "rating": 4.9,
-      "category": "Audio",
-      "imageUrl": "./Image/Catalog/catalog__img__1.jpg",
-      "quantity": 1
     }
   ],
   "cart": [
     {
-      "id": "ZPdApM9eotA",
-      "title": "Video Editing Basics",
-      "description": "Основы видеомонтажа для начинающих в Premiere Pro.",
-      "price": 80,
-      "rating": 4.5,
-      "category": "Video",
-      "imageUrl": "./Image/Catalog/catalog__img__2.jpg",
-      "quantity": 1
-    },
-    {
-      "id": "E3UUVthCGJE",
-      "title": "Advanced Audio Mixing",
-      "description": "Сведение звука и мастеринг для профессионалов.",
-      "price": 150,
-      "rating": 4.8,
+      "id": "CB6XcmTTzrg",
+      "title": "Podcast Launch Pro",
+      "description": "Полный курс по запуску успешного подкаста с нуля.",
+      "price": 120,
+      "rating": 4.9,
       "category": "Audio",
-      "imageUrl": "./Image/Catalog/catalog__img__3.jpg",
-      "quantity": 1
-    },
-    {
-      "id": "3Fl-Fie74Vo",
-      "title": "Advanced Audio Mixing",
-      "description": "Сведение звука и мастеринг для профессионалов.",
-      "price": 150,
-      "rating": 4.8,
-      "category": "Audio",
-      "imageUrl": "./Image/Catalog/catalog__img__3.jpg",
-      "quantity": 1
-    },
-    {
-      "id": "w9uWBAWDYss",
-      "title": "Video Editing Basics",
-      "description": "Основы видеомонтажа для начинающих в Premiere Pro.",
-      "price": 80,
-      "rating": 4.5,
-      "category": "Video",
-      "imageUrl": "./Image/Catalog/catalog__img__2.jpg",
-      "quantity": 1
-    },
-    {
-      "id": "cyzppVdZpVg",
-      "title": "Video Editing Basics",
-      "description": "Основы видеомонтажа для начинающих в Premiere Pro.",
-      "price": 80,
-      "rating": 4.5,
-      "category": "Video",
-      "imageUrl": "./Image/Catalog/catalog__img__2.jpg",
-      "quantity": 1
-    },
-    {
-      "id": "8zZSqO9nL2U",
-      "title": "Video Editing Basics",
-      "description": "Основы видеомонтажа для начинающих в Premiere Pro.",
-      "price": 80,
-      "rating": 4.5,
-      "category": "Video",
-      "imageUrl": "./Image/Catalog/catalog__img__2.jpg",
-      "quantity": 1
-    },
-    {
-      "id": "E-o_R_NML_Q",
-      "title": "Advanced Audio Mixing",
-      "description": "Сведение звука и мастеринг для профессионалов.",
-      "price": 150,
-      "rating": 4.8,
-      "category": "Audio",
-      "imageUrl": "./Image/Catalog/catalog__img__3.jpg",
-      "quantity": 1
-    },
-    {
-      "id": "XiCLnuD8g44",
-      "title": "Advanced Audio Mixing",
-      "description": "Сведение звука и мастеринг для профессионалов.",
-      "price": 150,
-      "rating": 4.8,
-      "category": "Audio",
-      "imageUrl": "./Image/Catalog/catalog__img__3.jpg",
-      "quantity": 1
-    },
-    {
-      "id": "Bd-ImNTlAok",
-      "title": "Advanced Audio Mixing",
-      "description": "Сведение звука и мастеринг для профессионалов.",
-      "price": 150,
-      "rating": 4.8,
-      "category": "Audio",
-      "imageUrl": "./Image/Catalog/catalog__img__3.jpg",
-      "quantity": 1
-    },
-    {
-      "id": "kz5WoB9RfKk",
-      "title": "Video Editing Basics",
-      "description": "Основы видеомонтажа для начинающих в Premiere Pro.",
-      "price": 80,
-      "rating": 4.5,
-      "category": "Video",
-      "imageUrl": "./Image/Catalog/catalog__img__2.jpg",
-      "quantity": 1
-    },
-    {
-      "id": "Azzk0g6wAd4",
-      "title": "Video Editing Basics",
-      "description": "Основы видеомонтажа для начинающих в Premiere Pro.",
-      "price": 80,
-      "rating": 4.5,
-      "category": "Video",
-      "imageUrl": "./Image/Catalog/catalog__img__2.jpg",
+      "imageUrl": "./Image/Catalog/catalog__img__1.jpg",
       "quantity": 1
     }
   ],
