@@ -2344,3 +2344,361 @@ h1, h2, h3, h4, h5, h6{
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+/* ============================================================
+   1. СКРОЛЛ-АНИМАЦИИ
+   ============================================================ */
+.scroll-hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+
+.parallax-section {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    background: #0a1628;
+    margin: 96px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Слой 1 — Фоновый (самое медленное движение) */
+.parallax-layer--bg {
+    position: absolute;
+    inset: -60px;
+    background: radial-gradient(ellipse at 20% 50%, #194677 0%, #0a1628 60%);
+    will-change: transform;
+}
+
+/* Слой 2 — Средний */
+.parallax-layer--mid {
+    position: absolute;
+    inset: -80px;
+    will-change: transform;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.parallax-layer--mid::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(1, 124, 255, 0.15) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Декоративные круги среднего слоя */
+.parallax-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(228, 141, 139, 0.2);
+    will-change: transform;
+}
+
+.parallax-circle:nth-child(1) { width: 200px; height: 200px; top: 20%; left: 10%; }
+.parallax-circle:nth-child(2) { width: 120px; height: 120px; top: 60%; right: 15%; border-color: rgba(1,124,255,0.3); }
+.parallax-circle:nth-child(3) { width: 80px; height: 80px; top: 30%; right: 25%; }
+
+/* Слой 3 — Передний (быстрое движение) */
+.parallax-layer--fg {
+    position: absolute;
+    will-change: transform;
+    text-align: center;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.parallax-layer--fg .parallax-text {
+    font-size: clamp(32px, 5vw, 60px);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 3px;
+    line-height: 1.2;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+
+.parallax-layer--fg .parallax-text span {
+    color: #E48D8B;
+}
+
+.parallax-layer--fg .parallax-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 18px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Слой 4 — Обратное направление (усиление глубины) */
+.parallax-layer--reverse {
+    position: absolute;
+    will-change: transform;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.parallax-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(228, 141, 139, 0.5);
+}
+
+/* Расставляем точки */
+.parallax-dot:nth-child(1)  { top: 15%; left: 5%; }
+.parallax-dot:nth-child(2)  { top: 75%; left: 8%; }
+.parallax-dot:nth-child(3)  { top: 40%; left: 92%; }
+.parallax-dot:nth-child(4)  { top: 80%; right: 10%; }
+.parallax-dot:nth-child(5)  { top: 20%; right: 5%; }
+.parallax-dot:nth-child(6)  { top: 55%; left: 50%; }
+.parallax-dot:nth-child(7)  { top: 10%; left: 40%; width: 10px; height: 10px; background: rgba(1,124,255,0.4); }
+.parallax-dot:nth-child(8)  { top: 85%; left: 60%; }
+.parallax-dot:nth-child(9)  { top: 35%; left: 25%; width: 4px; height: 4px; }
+.parallax-dot:nth-child(10) { top: 65%; left: 75%; width: 8px; height: 8px; background: rgba(1,124,255,0.3); }
+
+
+.gallery-section {
+    margin: 96px 0;
+    padding: 60px 0;
+    background: #f8f8f8;
+}
+ 
+.gallery-section h2 {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 40px;
+    color: #0F0F0F;
+}
+ 
+.gallery__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+ 
+.gallery__stage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+ 
+.gallery__media-container {
+    position: relative;
+    width: 100%;
+    height: 460px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #111;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+ 
+.gallery__main-img,
+.gallery__main-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.25s ease;
+}
+ 
+.gallery__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    pointer-events: none;
+}
+ 
+.gallery__label {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+ 
+.gallery__counter {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+}
+ 
+/* Панель управления */
+.gallery__controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: #fff;
+    padding: 14px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+ 
+.gallery__btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+ 
+.gallery__btn--random {
+    background: #E48D8B;
+    color: #fff;
+}
+.gallery__btn--random:hover { background: #d17a78; transform: scale(1.03); }
+ 
+.gallery__btn--video {
+    background: #194677;
+    color: #fff;
+}
+.gallery__btn--video:hover { background: #0d2d57; transform: scale(1.03); }
+ 
+.gallery__btn--playpause {
+    background: #017CFF;
+    color: #fff;
+    min-width: 110px;
+}
+.gallery__btn--playpause:hover:not(:disabled) { background: #005bb5; transform: scale(1.03); }
+.gallery__btn--playpause:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+ 
+.gallery__btn--mute {
+    background: #f0f0f0;
+    color: #333;
+    padding: 10px 12px;
+    font-size: 16px;
+    line-height: 1;
+}
+.gallery__btn--mute:hover { background: #e0e0e0; transform: scale(1.05); }
+ 
+.gallery__volume-label {
+    font-size: 13px;
+    color: #555;
+    min-width: 36px;
+    text-align: right;
+}
+ 
+ 
+.gallery__volume {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #666;
+}
+ 
+.gallery__volume-range {
+    width: 80px;
+    accent-color: #E48D8B;
+    cursor: pointer;
+}
+ 
+/* Миниатюры */
+.gallery__thumbnails {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 900px;
+    width: 100%;
+}
+ 
+.gallery__thumb {
+    width: 80px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid transparent;
+    transition: border-color 0.2s, transform 0.2s;
+    flex-shrink: 0;
+}
+ 
+.gallery__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+ 
+.gallery__thumb:hover { transform: scale(1.07); }
+.gallery__thumb.active { border-color: #E48D8B; }
+ 
+.gallery__thumb--video { border-color: #194677; }
+ 
+.gallery__thumb-video-icon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(25, 70, 119, 0.5);
+    color: #fff;
+    font-size: 20px;
+}
+ 
+@media (max-width: 768px) {
+    .gallery__media-container { height: 260px; }
+    .gallery__thumb { width: 60px; height: 45px; }
+    .gallery__volume { display: none; }
+}
+
+.nav-badge {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    min-width: 18px;
+    height: 18px;
+    background: #E48D8B;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    line-height: 1;
+    pointer-events: none;
+    animation: badge-pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+}
+
+.nav-badge--fav {
+    background: #ff6b6b;
+}
+
+@keyframes badge-pop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}

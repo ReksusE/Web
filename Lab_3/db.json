@@ -138,24 +138,75 @@
   ],
   "favorites": [
     {
-      "id": "3mGCLQ3Ttg4",
-      "title": "Podcast Launch Pro",
-      "description": "Полный курс по запуску успешного подкаста с нуля.",
-      "price": 120,
-      "rating": 4.9,
-      "category": "Audio",
-      "imageUrl": "./Image/Catalog/catalog__img__1.jpg"
+      "id": "O4jU7Evewn8",
+      "title": "Video Editing Basics",
+      "description": "Основы видеомонтажа для начинающих в Premiere Pro.",
+      "price": 80,
+      "rating": 4.5,
+      "category": "Video",
+      "imageUrl": "./Image/Catalog/catalog__img__2.jpg",
+      "quantity": 1
     }
   ],
   "cart": [
     {
-      "id": "CB6XcmTTzrg",
-      "title": "Podcast Launch Pro",
-      "description": "Полный курс по запуску успешного подкаста с нуля.",
-      "price": 120,
-      "rating": 4.9,
+      "id": "Xv9nNVeCxiY",
+      "title": "Advanced Audio Mixing",
+      "description": "Сведение звука и мастеринг для профессионалов.",
+      "price": 150,
+      "rating": 4.8,
       "category": "Audio",
-      "imageUrl": "./Image/Catalog/catalog__img__1.jpg",
+      "imageUrl": "./Image/Catalog/catalog__img__3.jpg",
+      "quantity": 1
+    },
+    {
+      "id": "f0g-u9dxENQ",
+      "title": "Video Editing Basics",
+      "description": "Основы видеомонтажа для начинающих в Premiere Pro.",
+      "price": 80,
+      "rating": 4.5,
+      "category": "Video",
+      "imageUrl": "./Image/Catalog/catalog__img__2.jpg",
+      "quantity": 1
+    },
+    {
+      "id": "xkfmMTd6NmM",
+      "title": "Video Editing Basics",
+      "description": "Основы видеомонтажа для начинающих в Premiere Pro.",
+      "price": 80,
+      "rating": 4.5,
+      "category": "Video",
+      "imageUrl": "./Image/Catalog/catalog__img__2.jpg",
+      "quantity": 1
+    },
+    {
+      "id": "xf2PR6ewGAo",
+      "title": "YouTube Growth",
+      "description": "Маркетинг и алгоритмы: как набрать первый миллион просмотров.",
+      "price": 199,
+      "rating": 5,
+      "category": "Marketing",
+      "imageUrl": "./Image/Catalog/catalog__img__5.jpg",
+      "quantity": 1
+    },
+    {
+      "id": "v1csXCbXXyA",
+      "title": "Advanced Audio Mixing",
+      "description": "Сведение звука и мастеринг для профессионалов.",
+      "price": 150,
+      "rating": 4.8,
+      "category": "Audio",
+      "imageUrl": "./Image/Catalog/catalog__img__3.jpg",
+      "quantity": 1
+    },
+    {
+      "id": "uj3BPLsF88o",
+      "title": "After Effects Magic",
+      "description": "Создание крутых анимаций и визуальных эффектов.",
+      "price": 140,
+      "rating": 4.6,
+      "category": "Video",
+      "imageUrl": "./Image/Catalog/catalog__img__6.jpg",
       "quantity": 1
     }
   ],
@@ -285,6 +336,13 @@
       "text": "jhfhgcghcgcghccchccc",
       "date": "2026-04-28",
       "id": "1KMfKXnlg7M"
+    },
+    {
+      "userId": "2",
+      "courseId": "2",
+      "text": ",.mnbvkjhgjhgf jghthth",
+      "date": "2026-05-13",
+      "id": "o44aCGxU4R8"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

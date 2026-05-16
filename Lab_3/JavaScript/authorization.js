@@ -38,7 +38,6 @@ function validateLogin() {
         loginPass.classList.remove("input--invalid");
     }
     
-    // Активируем кнопку только если всё валидно
     const isValid = emailValid && passValid && email.length > 0 && password.length > 0;
     loginBtn.disabled = !isValid;
     loginBtn.classList.toggle("auth__btn--primary--active", isValid);
@@ -46,11 +45,9 @@ function validateLogin() {
     console.log("Email valid:", emailValid, "Pass valid:", passValid, "Button enabled:", isValid);
 }
 
-// Вызываем валидацию при вводе
 loginEmail.addEventListener("input", validateLogin);
 loginPass.addEventListener("input", validateLogin);
 
-// Обработка отправки формы
 loginForm.addEventListener("submit", async e => {
     e.preventDefault();
     
@@ -61,7 +58,6 @@ loginForm.addEventListener("submit", async e => {
     loginBtn.disabled = true;
     
     try {
-        // Ищем пользователя по email
         const res = await fetch(`${API}/users?email=${encodeURIComponent(email)}`);
         const users = await res.json();
         
@@ -70,7 +66,6 @@ loginForm.addEventListener("submit", async e => {
         const user = users.find(u => u.password === password);
         
         if (user) {
-            // Сохраняем данные пользователя в localStorage
             localStorage.setItem("currentUserId", user.id);
             localStorage.setItem("userRole", user.role);
             localStorage.setItem("userName", user.firstName);
