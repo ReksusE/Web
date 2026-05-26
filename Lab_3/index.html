@@ -6,12 +6,27 @@
     <title>Coursely | Home</title>
     <link rel="icon" type="image/jpg" href="./Image/favicon.jpg">
     <link rel="stylesheet" href="./CSS/style.css">
-    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- Yandex Maps API (Замен YOUR_API_KEY на ваш ключ, или используйте sandbox для тестов) -->
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU" type="text/javascript"></script>
-    <!-- Favicon (создайте файл favicon.ico в корне или используйте ссылку) -->
     <link rel="icon" type="image/png" href="./Image/favicon.png"> 
+
+    <style>
+        :root {
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #FBFBFB;
+            --bg-tertiary: #EDEDED;
+            --text-primary: #0F0F0F;
+            --text-secondary: #464646;
+            --text-muted: #757575;
+            --accent: #E48D8B;
+            --accent-hover: #d17a78;
+            --border: #F0F0F0;
+            --shadow: rgba(0, 0, 0, 0.05);
+            --card-bg: #FFFFFF;
+            --input-bg: #fafafa;
+            --input-border: #e0e0e0;
+        }
+    </style>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
     </style>
@@ -21,68 +36,71 @@
         <div class="preloader__spinner"></div>
     </div>
 
-    <header class="header" data-js-header>
-        <div class="header--templates">
-            <p>A Webflow template for video courses.</p>
-            <a href="#" class="a--header">See all templates ></a>
-        </div>
+    <header class="header--coursely" data-js-header>
+        <!-- Логотип -->
+        <a href="index.html" class="header--logo">
+            <img src="./Image/Logo.png" alt="Coursely" class="header--logo--image" data-theme-img>
+        </a>
         
-        <div class="wrapper--coursely">
-            <div class="container--big">
-                <div class="header--coursely">
-                    <a href="/" class="header--logo">
-                        <img 
-                        src="/Image/Logo.png" 
-                        alt="Coursely Logo" 
-                        class="header--logo--image"
-                        width="141" 
-                        height="27" 
-                        loading="lazy"
-                        >
-                    </a>
-                    
-                    <div class="header__overlay" data-js-header-nav>
-                        <div class="nav-links">
-                            <a href="index.html" class="nav-item active">Главная</a>
-                            <a href="catalog.html" class="nav-item">Каталог</a>
-                            <a href="favorites.html" class="nav-item">Избранное</a>
-                            <a href="cart.html" class="nav-item">Корзина</a>
-                            <a href="feedback.html" id="feedback-link" class="nav-item">Отзывы</a>
-                            <a href="admin.html" id="admin-link" class="nav-item">Админ-панель</a>
-                        </div>
-                        <button class="btn--primary" type="button">
-                            <a href="/authorization.html" id="auth-link">Вход</a>
-                        </button>
-                    </div>
-
-                    <button 
-                    class="header__burger-button burger-button visible-mobile"
-                    type="button"
-                    aria-label="Open menu"
-                    title="Open menu"
-                    data-js-header-burger-button
-                    >
-                        <span class="burger-button__line"></span>
-                        <span class="burger-button__line"></span>
-                        <span class="burger-button__line"></span>
-                    </button>
-                </div>
+        <!-- Заголовок страницы (скрыт на мобильных) -->
+        <h1 class="visible-mobile">Coursely</h1>
+        
+        <!-- Навигация -->
+        <nav class="nav-links header__overlay" data-js-header-nav>
+            <a href="index.html" class="nav-item" data-i18n="nav-home">Главная</a>
+            <a href="catalog.html" class="nav-item" data-i18n="nav-catalog">Каталог</a>
+            <a href="favorites.html" class="nav-item" data-i18n="nav-favorites">Избранное</a>
+            <a href="cart.html" class="nav-item" data-i18n="nav-cart">Корзина</a>
+            <a href="feedback.html" class="nav-item" id="feedback-link" data-i18n="nav-feedback">Отзывы</a>
+            <a href="admin.html" class="nav-item" id="admin-link" style="display:none;" data-i18n="nav-admin">Админ-панель</a>
+        </nav>
+        
+        <!-- Правая часть: переключатели + авторизация -->
+        <div class="header-controls" style="display:flex; align-items:center; gap:12px;">
+            
+            <!-- Переключатель языка -->
+            <div class="lang-switcher">
+            <button type="button" data-lang="ru" class="active" aria-label="Русский">RU</button>
+            <button type="button" data-lang="en" aria-label="English">EN</button>
             </div>
+            
+            <!-- Переключатель темы -->
+            <div class="theme-switcher">
+            <button type="button" class="theme-toggle" aria-label="Сменить тему">🌙</button>
+            </div>
+            
+            <!-- Кнопка профиля пользователя (показывается после входа) -->
+            <button type="button" id="user-profile-btn" class="user-profile-btn" style="display:none;" aria-label="Мой профиль">
+            <span class="user-avatar" id="user-avatar">?</span>
+            </button>
+            
+            <!-- Ссылка "Выход" (показывается после входа) -->
+            <a href="#" id="logout-link" class="nav-item" style="display:none;" data-i18n="nav-logout">Выход</a>
+            
+            <!-- Ссылка "Вход" (скрывается после входа) -->
+            <a href="authorization.html" id="auth-link" class="nav-item" data-i18n="nav-auth">Вход</a>
+            
+            <!-- Бургер-кнопка (мобильные) -->
+            <button class="burger-button visible-mobile" data-js-header-burger-button aria-label="Меню">
+            <span class="burger-button__line"></span>
+            <span class="burger-button__line"></span>
+            <span class="burger-button__line"></span>
+            </button>
         </div>
     </header>
 
     <main>
         <div class="container--small course--section">
             <div class="course--hero">
-                <h1>Learn How To Launch a Successful Podcast</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h1 data-i18n="hero-title">Learn How To Launch a Successful Podcast</h1>
+                <p data-i18n="hero-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 <div class="price">
                     <span class="current--price">$189</span>
                     <span class="old--price">$399</span>
                 </div>
                 <div class="course--button">
-                    <button class="btn--primary" type="button"><a href="/catalog.html">Enroll Now</a></button>
-                    <button class="btn--secondary" type="button">
+                    <button class="btn--primary" type="button"><a href="/catalog.html" data-i18n="hero-enroll">Enroll Now</a></button>
+                    <button class="btn--secondary" type="button" data-i18n="hero-trailer">
                         <img src="/Image/button_image.png"
                         alt="button image"
                         class="button--image"
@@ -102,35 +120,22 @@
             >
         </div>
 
-        <section class="feature--section">
-            <div class="container--small">
-                <div class="features--grid">
-                    <div class="features--card card1">
-                        <img src="/Icons/1.svg" 
-                        alt="Microphone" 
-                        class="features--card--image"
-                        loading="lazy"
-                        >
-                        <h3>Learn what the best gear is and where to get it</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="features--card card2">
-                        <img src="/Icons/2.svg" 
-                        alt="People" 
-                        loading="lazy"
-                        >
-                        <h3>How to find guests for your episodes</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et dolore magna aliqua.</p>
-                    </div>
-                    <div class="features--card card3">
-                        <img src="/Icons/3.svg" 
-                        alt="Coins" 
-                        class="features--card--image"
-                        loading="lazy"
-                        >
-                        <h3>And how to finally make some money</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
+        <section class="feature--section container--big">
+            <div class="features--grid">
+                <div class="features--card">
+                    <img src="/Icons/1.svg" alt="Icon 1">
+                    <h3 data-i18n="feat-1-title">Learn what the best gear is and where to get it</h3>
+                    <p data-i18n="feat-1-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="features--card card2">
+                    <img src="/Icons/2.svg" alt="Icon 2">
+                    <h3 data-i18n="feat-2-title">How to find guests for your episodes</h3>
+                    <p data-i18n="feat-2-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et dolore magna aliqua.</p>
+                </div>
+                <div class="features--card card3">
+                    <img src="/Icons/3.svg" alt="Icon 3">
+                    <h3 data-i18n="feat-3-title">And how to finally make some money</h3>
+                    <p data-i18n="feat-3-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
             </div>
         </section>
@@ -146,8 +151,8 @@
                     loading="lazy"
                     >
                     <div class="teacher--content">
-                        <h2>Learn with Joyce and Rob, your podcast teachers</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h2 data-i18n="teacher-title">Learn with Joyce and Rob, your podcast teachers</h2>
+                        <p data-i18n="teacher-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                     
                 </div>
@@ -207,27 +212,27 @@
         <section class="included--section">
             <div class="container--big">
                 <div class="included">
-                    <h2>What's Included?</h2>
+                    <h2 data-i18n="included-title">What's Included?</h2>
                     <div class="included--list">
                         <div class="include--card--1 include--card">
                             <h3>6</h3>
-                            <p>Chapters</p>
+                            <p data-i18n="included-stat-1">Chapters</p>
                         </div>
                         <div class="include--card--2 include--card">
                             <h3>56+</h3>
-                            <p>Podcast Ideas</p>
+                            <p data-i18n="included-stat-2">Podcast Ideas</p>
                         </div>
                         <div class="include--card--3 include--card">
                             <h3>28</h3>
-                            <p>Videos</p>
+                            <p data-i18n="included-stat-3">Videos</p>
                         </div>
                         <div class="include--card--4 include--card">
                             <h3>4</h3>
-                            <p>Free Resources</p>
+                            <p data-i18n="included-stat-4">Free Resources</p>
                         </div>
                         <div class="include--card--5 include--card">
                             <h3>$8k</h3>
-                            <p>Worth of Value</p>
+                            <p data-i18n="included-stat-5">Worth of Value</p>
                         </div>
                     </div>
                 </div>
@@ -236,10 +241,10 @@
 
         <section class="curriculum--section">
             <div class="container--big curriculum">
-                <h2>The Course Curriculum</h2>
+                <h2 included-stat-2>The Course Curriculum</h2>
                 <div class="curriculum--grid">
                     <ul class="curriculum--list">
-                        <li>
+                        <li data-i18n="curr-1">
                             Outlining your Idea
                             <img 
                             src="/Image/curriculum__image.png" 
@@ -249,7 +254,7 @@
                             height="10px"
                             loading="lazy">
                         </li>
-                        <li>
+                        <li data-i18n="curr-2">
                             Finding Guests
                             <img 
                             src="/Image/curriculum__image.png" 
@@ -259,7 +264,7 @@
                             height="10px"
                             loading="lazy">
                         </li>
-                        <li>
+                        <li data-i18n="curr-3">
                             Growing & Connecting
                             <img 
                             src="/Image/curriculum__image.png" 
@@ -269,7 +274,7 @@
                             height="10px"
                             loading="lazy">
                         </li>
-                        <li>
+                        <li data-i18n="curr-4">
                             Profiting From Your Podcast
                             <img 
                             src="/Image/curriculum__image.png" 
@@ -279,7 +284,7 @@
                             height="10px"
                             loading="lazy">
                         </li>
-                        <li>
+                        <li data-i18n="curr-5">
                             Building Your Brand
                             <img 
                             src="/Image/curriculum__image.png" 
@@ -289,7 +294,7 @@
                             height="10px"
                             loading="lazy">
                         </li>
-                        <li>
+                        <li data-i18n="curr-6">
                             Long Term Thinking
                             <img 
                             src="/Image/curriculum__image.png" 
@@ -315,7 +320,7 @@
                 </div>
 
                 <div class="card--wrapper">
-                    <h2>By the end of the 4-week course...</h2>
+                    <h2 data-i18n="stats-title">By the end of the 4-week course...</h2>
 
                     <div class="stats--grid">
                         <div class="stats--card">
@@ -325,7 +330,7 @@
                             class="card--svg"
                             width="40px"
                             loading="lazy">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p data-i18n="stats-desc-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
 
                         <div class="stats--card">
@@ -335,7 +340,7 @@
                             class="card--svg"
                             width="40px"
                             loading="lazy">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et dolore aliqua.</p>
+                            <p data-i18n="stats-desc-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et dolore aliqua.</p>
                         </div>
 
                         <div class="stats--card">
@@ -345,7 +350,7 @@
                             class="card--svg"
                             width="40px"
                             loading="lazy">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                            <p data-i18n="stats-desc-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
                         </div>
 
                         <div class="stats--card">
@@ -355,7 +360,7 @@
                             class="card--svg"
                             width="40px"
                             loading="lazy">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et dolore aliqua.</p>
+                            <p data-i18n="stats-desc-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et dolore aliqua.</p>
                         </div>
 
                         <div class="stats--card">
@@ -365,7 +370,7 @@
                             class="card--svg"
                             width="40px"
                             loading="lazy">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                            <p data-i18n="stats-desc-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
                         </div>
 
                         <div class="stats--card">
@@ -375,7 +380,7 @@
                             class="card--svg"
                             width="40px"
                             loading="lazy">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et dolore aliqua.</p>
+                            <p data-i18n="stats-desc-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et dolore aliqua.</p>
                         </div>
 
                         <div class="stats--card">
@@ -385,7 +390,7 @@
                             class="card--svg"
                             width="40px"
                             loading="lazy">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p data-i18n="stats-desc-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
 
                         <div class="stats--card">
@@ -395,7 +400,7 @@
                             class="card--svg"
                             width="40px"
                             loading="lazy">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                            <p data-i18n="stats-desc-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
                         </div>
                     </div>
                 </div>
@@ -921,7 +926,54 @@
     </footer>
 
     <div id="toast-container" class="toast-container" data-js-toast-container></div>
+    <div id="user-profile-modal" class="modal" style="display: none;">
+        <div class="modal__content" style="background: var(--card-bg); color: var(--text-primary);">
+            <span class="modal__close">&times;</span>
+            <h3 data-i18n="profile-title">Мой профиль</h3>
+            
+            <form id="profile-form" style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div>
+                <label data-i18n="auth-firstname">Имя *</label>
+                <input type="text" id="profile-firstname" required class="auth__input">
+                </div>
+                <div>
+                <label data-i18n="auth-lastname">Фамилия *</label>
+                <input type="text" id="profile-lastname" required class="auth__input">
+                </div>
+            </div>
+            
+            <div>
+                <label data-i18n="auth-nickname">Никнейм</label>
+                <input type="text" id="profile-nickname" class="auth__input">
+            </div>
+            
+            <div>
+                <label data-i18n="auth-email">Email *</label>
+                <input type="email" id="profile-email" required class="auth__input">
+            </div>
+            
+            <div>
+                <label data-i18n="auth-phone">Телефон</label>
+                <input type="tel" id="profile-phone" class="auth__input" placeholder="+375 (__) ___-__-__">
+            </div>
+            
+            <div>
+                <label>Дата рождения</label>
+                <input type="date" id="profile-dob" class="auth__input">
+            </div>
+            
+            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                <button type="submit" class="auth__btn--primary auth__btn--primary--active" style="flex: 1;">Сохранить</button>
+                <button type="button" id="profile-reset-btn" class="auth__btn--secondary">Сбросить</button>
+            </div>
+            </form>
+        </div>
+    </div>
 
+    <script src="/JavaScript/translate.js"></script>
+    <script src="/JavaScript/theme.js"></script>
+    <script src="/JavaScript/user-profile.js"></script>
     <script src="/JavaScript/main.js"></script>
     <script src="/JavaScript/burger.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

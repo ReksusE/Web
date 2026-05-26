@@ -136,78 +136,35 @@
       "imageUrl": "./Image/Catalog/catalog__img__15.jpg"
     }
   ],
-  "favorites": [
-    {
-      "id": "O4jU7Evewn8",
-      "title": "Video Editing Basics",
-      "description": "Основы видеомонтажа для начинающих в Premiere Pro.",
-      "price": 80,
-      "rating": 4.5,
-      "category": "Video",
-      "imageUrl": "./Image/Catalog/catalog__img__2.jpg",
-      "quantity": 1
-    }
-  ],
   "cart": [
     {
       "id": "Xv9nNVeCxiY",
+      "userId": "2",
       "title": "Advanced Audio Mixing",
-      "description": "Сведение звука и мастеринг для профессионалов.",
       "price": 150,
-      "rating": 4.8,
-      "category": "Audio",
-      "imageUrl": "./Image/Catalog/catalog__img__3.jpg",
-      "quantity": 1
+      "quantity": 1,
+      "...": "остальные поля"
     },
     {
-      "id": "f0g-u9dxENQ",
+      "id": "pet4lJ5nKj4",
       "title": "Video Editing Basics",
       "description": "Основы видеомонтажа для начинающих в Premiere Pro.",
       "price": 80,
       "rating": 4.5,
       "category": "Video",
       "imageUrl": "./Image/Catalog/catalog__img__2.jpg",
-      "quantity": 1
-    },
+      "quantity": 1,
+      "userId": "1"
+    }
+  ],
+  "favorites": [
     {
-      "id": "xkfmMTd6NmM",
+      "id": "O4jU7Evewn8",
+      "userId": "2",
       "title": "Video Editing Basics",
-      "description": "Основы видеомонтажа для начинающих в Premiere Pro.",
       "price": 80,
-      "rating": 4.5,
-      "category": "Video",
-      "imageUrl": "./Image/Catalog/catalog__img__2.jpg",
-      "quantity": 1
-    },
-    {
-      "id": "xf2PR6ewGAo",
-      "title": "YouTube Growth",
-      "description": "Маркетинг и алгоритмы: как набрать первый миллион просмотров.",
-      "price": 199,
-      "rating": 5,
-      "category": "Marketing",
-      "imageUrl": "./Image/Catalog/catalog__img__5.jpg",
-      "quantity": 1
-    },
-    {
-      "id": "v1csXCbXXyA",
-      "title": "Advanced Audio Mixing",
-      "description": "Сведение звука и мастеринг для профессионалов.",
-      "price": 150,
-      "rating": 4.8,
-      "category": "Audio",
-      "imageUrl": "./Image/Catalog/catalog__img__3.jpg",
-      "quantity": 1
-    },
-    {
-      "id": "uj3BPLsF88o",
-      "title": "After Effects Magic",
-      "description": "Создание крутых анимаций и визуальных эффектов.",
-      "price": 140,
-      "rating": 4.6,
-      "category": "Video",
-      "imageUrl": "./Image/Catalog/catalog__img__6.jpg",
-      "quantity": 1
+      "quantity": 1,
+      "...": "остальные поля"
     }
   ],
   "users": [

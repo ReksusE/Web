@@ -1,10 +1,18 @@
 const API_URL = "http://localhost:3000";
 
 async function loadCart() {
-    const res = await fetch(`${API_URL}/cart`);
+    const currentUserId = localStorage.getItem('currentUserId');
+  
+    let url = `${API_URL}/cart`;
+    // Если пользователь авторизован — показываем только его товары
+    if (currentUserId) {
+        url += `?userId=${currentUserId}`;
+    }
+  
+    const res = await fetch(url);
     const data = await res.json();
     const items = data.data || data;
-
+    
     renderCart(items);
     calculateTotal(items);
 }

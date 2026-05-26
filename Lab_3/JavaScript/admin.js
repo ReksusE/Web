@@ -63,7 +63,6 @@ function setupModal() {
             
             if(modal) {
                 modal.style.display = "flex";
-                // Небольшая задержка для плавного появления (CSS transition)
                 setTimeout(() => {
                     modal.classList.add("show");
                 }, 10);

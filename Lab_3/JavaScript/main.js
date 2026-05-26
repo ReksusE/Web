@@ -304,7 +304,7 @@ class MediaGallery {
         this.updatePlayerState();
     }
  
-    // ── Громкость ────────────────────────────────────────────
+    
     setVolume(val) {
         this.volume = parseFloat(val);
         const video = this.container.querySelector('.gallery__main-video');
@@ -608,3 +608,77 @@ document.addEventListener('DOMContentLoaded', () => {
         new MediaGallery();
     }
 })
+
+// === ИНИЦИАЛИЗАЦИЯ ХЕДЕРА ===
+document.addEventListener('DOMContentLoaded', () => {
+    initHeaderControls();
+});
+
+function initHeaderControls() {
+  // 1. Обновление UI авторизации
+    updateAuthUI();
+  
+  // 2. Обработчик выхода
+    const logoutLink = document.getElementById('logout-link');
+        if (logoutLink) {
+        logoutLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.clear();
+            if (window.showToast) showToast('Вы вышли из аккаунта', 'success');
+            setTimeout(() => window.location.href = 'authorization.html', 1000);
+        });
+    } 
+  
+  // 3. Переключатель языка (если translate.js уже подключен — дублирование не страшно)
+  document.querySelectorAll('.lang-switcher button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      localStorage.setItem('coursely_lang', lang);
+      if (typeof getTranslate === 'function') getTranslate(lang);
+      document.querySelectorAll('.lang-switcher button').forEach(b => 
+        b.classList.toggle('active', b === btn)
+      );
+    });
+  });
+  
+  
+  // 5. Кнопка профиля
+  const profileBtn = document.getElementById('user-profile-btn');
+  if (profileBtn) {
+    profileBtn.addEventListener('click', () => {
+      const modal = document.getElementById('user-profile-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        setTimeout(() => modal.classList.add('show'), 10);
+      }
+    });
+  }
+}
+
+// Обновление UI в зависимости от авторизации
+function updateAuthUI() {
+  const userId = localStorage.getItem('currentUserId');
+  const userName = localStorage.getItem('userName');
+  const nickname = localStorage.getItem('userNickname');
+  
+  const authLink = document.getElementById('auth-link');
+  const logoutLink = document.getElementById('logout-link');
+  const profileBtn = document.getElementById('user-profile-btn');
+  const avatar = document.getElementById('user-avatar');
+  
+  if (userId) {
+    // Пользователь вошёл
+    if (authLink) authLink.style.display = 'none';
+    if (logoutLink) logoutLink.style.display = 'inline-flex';
+    if (profileBtn) {
+      profileBtn.style.display = 'flex';
+      const initial = (userName || nickname || 'U')[0].toUpperCase();
+      if (avatar) avatar.textContent = initial;
+    }
+  } else {
+    // Пользователь не вошёл
+    if (authLink) authLink.style.display = 'inline-flex';
+    if (logoutLink) logoutLink.style.display = 'none';
+    if (profileBtn) profileBtn.style.display = 'none';
+  }
+}

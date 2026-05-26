@@ -1,9 +1,16 @@
 const API_URL = "http://localhost:3000";
 
 async function loadFavorites() {
-    const res = await fetch(`${API_URL}/favorites`);
+    const currentUserId = localStorage.getItem('currentUserId');
+    
+    let url = `${API_URL}/favorites`;
+    if (currentUserId) {
+        url += `?userId=${currentUserId}`;
+    }
+    
+    const res = await fetch(url);
     const data = await res.json();
-    const items = data.data || data; // Обработка версии 1.0
+    const items = data.data || data; 
 
     const grid = document.getElementById('favorites-container');
     grid.innerHTML = items.map(item => `

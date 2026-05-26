@@ -129,12 +129,15 @@ async function addTo(target, id, event) {
 
         // 4. Если дубликата нет — отправляем POST запрос
         console.log(`Отправляю данные в ${target}...`);
+        const currentUserId = localStorage.getItem('currentUserId');
+        
         const postResponse = await fetch(`${API_URL}/${target}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                ...courseData,
-                quantity: 1
+            ...courseData,
+            quantity: 1,
+            userId: currentUserId || null
             })
         });
 
